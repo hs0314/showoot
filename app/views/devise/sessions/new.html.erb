@@ -1,43 +1,42 @@
-<%= navback "로그인" %>
-<%= toolbar ["로그인", "회원가입", "비번찾기"] %>
-
-<!-- <div class="toolbar tabbar">
-  <div class="toolbar-inner">
-    <a href="./" class="tab-link" data-route-tab-id="about">About</a>
-    <a href="./contacts/" class="tab-link" data-route-tab-id="contacts">>Contacts</a>
-    <a href="./cv/" class="tab-link" data-route-tab-id="cv">>CV</a>
-  </div>
-</div>
-<div class="tabs tabs-routable">
-  <div class="tab page-content" id="about"></div>
-  <div class="tab page-content" id="contacts"></div>
-  <div class="tab page-content" id="cv"></div>
-</div> -->
-
-<div class="page-content login-screen-content">
-  <div class="login-screen-title">쇼옷</div>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="list block">
-      <ul>
-        <%= input :email, f %>
-        <%= input :password, f %>
-        <%# check :password, "비밀번호", f %>
-        <%# radio :password, "비밀번호", f, true %>
-        <%# radio :password, "비밀번호", f, false %>
-        <li class="">
-          <%= submit "로그인", f %>
-        </li>
-        <li class="block-footer">이용약관 및 개인정보 보호정책에 동의합니다</li>
-        <li>
-          <%- if controller_name != 'sessions' %>
-            <%= link_to "로그인", new_session_path(resource_name), class: "list-button item-link button" %>
-          <% end -%>
-
-          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-            <%= link_to "회원가입", new_registration_path(resource_name), class: "list-button item-link button" %><br />
-          <% end -%>
-        </li>
-      </ul>
-    </div>
-  <% end %>
+<div class="page-content">
+	<div class="account-page">
+		<div class="account-inner">
+			<div class="account-center">
+				<div class="account-content">
+					<!--div class="account-logo">
+						<img alt="" src="assets/img/logo2.png">
+					</div-->
+					<div class="account-title">
+						<h1 class="text-align-center">쇼옷</h1>
+					</div>
+					<div class="account-form">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+							<div class="input-list">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"이메일" %>
+							</div>
+							<div class="input-list">
+                <%= f.password_field :password, placeholder: "비밀번호" ,autocomplete: "off" %>
+							</div>
+							<div class="input-list">
+								<% if devise_mapping.rememberable? -%>
+									<div class="field">
+										<%= f.check_box :remember_me %>
+										<%= f.label :remember_me %>
+									</div>
+								<% end -%>
+							</div>
+							<div class="input-list input_btn">
+                <%= f.button class:"button button-big button-fill account-btn" do%>
+                  로그인
+                <% end %>
+							</div>
+              <p class="text-align-center">
+                <%= link_to "회원가입", new_user_registration_path %> | <%= link_to "아이디/비밀번호 찾기", "#" %>
+              </p>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
