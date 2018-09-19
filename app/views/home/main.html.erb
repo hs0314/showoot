@@ -1,0 +1,40 @@
+<%= navback "메인" %>
+<div class="page-content">
+  <div data-pagination='{"el": ".swiper-pagination", "hideOnClick": true}' class="swiper-container swiper-init demo-swiper" style="height:50%;">
+    <div class="swiper-pagination"></div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <%= image_tag "https://insomenia.com/uploads/ratio_ea3ccdcd-4f1d-439c-b5fb-082cd759f4ce.jpg" %>
+      </div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+  </div>
+  <div class="block-title">인기 게시물</div>
+  <div class="list media-list">
+    <ul>
+      <% Post.all.each do |post| %>
+        <li>
+          <a href="<%= post_path(post) %>" class="item-link item-content">
+            <div class="item-media"><img src="http://lorempixel.com/160/160/people/1" width="80"/></div>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-title"><%= post.title %></div>
+                <div class="item-after">$15</div>
+              </div>
+              <div class="item-subtitle">Beatles</div>
+              <div class="item-text"><%= truncate post.body, length: 100 %></div>
+            </div>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

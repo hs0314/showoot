@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <title>
+      쇼옷
+    </title>
+    <link rel="stylesheet" href="/core/css/framework7.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="apple-touch-icon" href="/img/f7-icon-square.png">
+    <link rel="icon" href="/img/f7-icon.png">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <div id="app">
+      <div class="statusbar"></div>
+      <div class="panel panel-left panel-cover">
+        <div class="page">
+          <div class="page-content">
+            <%= yield :left %>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-right panel-reveal">
+        <div class="view view-init view-right" name="right" data-url="/">
+          <div class="page">
+            <%= yield :right %>
+          </div>
+        </div>
+      </div>
+      <div class="view view-main view-init ios-edges">
+        <div class="page" data-name="<%= "#{controller_name}-#{action_name}" %>">
+          <%= yield :navbar %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <script src="/core/js/framework7.min.js"></script>
+    <%= render "shared/routes" %>
+    <%= javascript_include_tag 'app' %>
+  </body>
+</html>

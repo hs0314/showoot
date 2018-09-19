@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#2196f3">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+    <title>Framework7</title>
+    <link rel="stylesheet" href="/core/css/framework7.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="apple-touch-icon" href="/img/f7-icon-square.png">
+    <link rel="icon" href="/img/f7-icon.png">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+</head>
+  <body>
+    <div id="app">
+      <div class="statusbar"></div>
+      <div class="panel panel-left panel-cover">
+        <div class="page">
+          <div class="page-content">
+            <div class="block-title">Left Panel</div>
+            <div class="block">
+              <p>This is a left side panel. You can close it by clicking outsite or on this link: <a href="#" class="panel-close">close me</a>. You can put here anything, even another isolated view like in <a href="#" data-panel="right" class="panel-open">Right Panel</a></p>
+            </div>
+            <div class="block-title">Main View Navigation</div>
+            <div class="list links-list">
+              <ul>
+                <li>
+                  <a href="/accordion/" class="panel-close">Accordion</a>
+                </li>
+                <li>
+                  <a href="/action-sheet/" class="panel-close">Action Sheet</a>
+                </li>
+                <li>
+                  <a href="/badge/" class="panel-close">Badge</a>
+                </li>
+                <li>
+                  <a href="/buttons/" class="panel-close">Buttons</a>
+                </li>
+                <li>
+                  <a href="/cards/" class="panel-close">Cards</a>
+                </li>
+                <li>
+                  <a href="/checkbox/" class="panel-close">Checkbox</a>
+                </li>
+                <li>
+                  <a href="/chips/" class="panel-close">Chips/Tags</a>
+                </li>
+                <li>
+                  <a href="/contacts-list/" class="panel-close">Contacts List</a>
+                </li>
+                <li>
+                  <a href="/data-table/" class="panel-close">Data Table</a>
+                </li>
+              </ul>
+            </div>
+            <div class="block">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus mauris leo, eu bibendum neque congue non. Ut leo mauris, eleifend eu commodo a, egestas ac urna. Maecenas in lacus faucibus, viverra ipsum pulvinar, molestie arcu. Etiam lacinia venenatis dignissim. Suspendisse non nisl semper tellus malesuada suscipit eu et eros. Nulla eu enim quis quam elementum vulputate. Mauris ornare consequat nunc viverra pellentesque. Aenean semper eu massa sit amet aliquam. Integer et neque sed libero mollis elementum at vitae ligula. Vestibulum pharetra sed libero sed porttitor. Suspendisse a faucibus lectus.</p>
+              <p>Duis ut mauris sollicitudin, venenatis nisi sed, luctus ligula. Phasellus blandit nisl ut lorem semper pharetra. Nullam tortor nibh, suscipit in consequat vel, feugiat sed quam. Nam risus libero, auctor vel tristique ac, malesuada ut ante. Sed molestie, est in eleifend sagittis, leo tortor ullamcorper erat, at vulputate eros sapien nec libero. Mauris dapibus laoreet nibh quis bibendum. Fusce dolor sem, suscipit in iaculis id, pharetra at urna. Pellentesque tempor congue massa quis faucibus. Vestibulum nunc eros, convallis blandit dui sit amet, gravida adipiscing libero.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-right panel-reveal">
+        <div class="view view-init view-right" name="right" data-url="/">
+          <div class="page">
+            <div class="navbar">
+              <div class="navbar-inner sliding">
+                <div class="title">Right Panel</div>
+              </div>
+            </div>
+            <div class="page-content">
+              <div class="block">
+                <p>This is a right side panel. You can close it by clicking outsite or on this link: <a href="#" class="panel-close">close me</a>. You can put here anything, even another isolated view.</p>
+              </div>
+              <div class="block-title">Panel Navigation</div>
+              <div class="list links-list">
+                <ul>
+                  <li><a href="/panel-right-1/">Right panel page 1</a></li>
+                  <li><a href="/panel-right-2/">Right panel page 2</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="view view-main view-init ios-edges" data-url="/">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <a href="#" class="link icon-only panel-open" data-panel="left">
+                  <i class="icon f7-icons ios-only">menu</i>
+                  <i class="icon material-icons md-only">menu</i>
+                </a>
+              </div>
+              <div class="title sliding">쇼옷</div>
+              <div class="right">
+                <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
+                  <i class="icon f7-icons ios-only">search_strong</i>
+                  <i class="icon material-icons md-only">search</i>
+                </a>
+              </div>
+              <form data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+                <div class="searchbar-inner">
+                  <div class="searchbar-input-wrap">
+                    <input type="search" placeholder="Search components"/>
+                    <i class="searchbar-icon"></i>
+                    <span class="input-clear-button"></span>
+                  </div>
+                  <span class="searchbar-disable-button">Cancel</span>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="list searchbar-hide-on-search">
+              <ul>
+                <li>
+                  <a class="item-content item-link" href="/about/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">About Framework7</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="block-title searchbar-found">Components</div>
+            <div class="list components-list searchbar-found">
+              <ul>
+                <li>
+                  <a class="item-content item-link" href="/accordion/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Accordion</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/action-sheet/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Action Sheet</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/autocomplete/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Autocomplete</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/badge/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Badge</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/buttons/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Buttons</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/calendar/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Calendar / Date Picker</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/cards/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Cards</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/checkbox/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Checkbox</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/chips/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Chips / Tags</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/contacts-list/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Contacts List</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/content-block/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Content Block</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/data-table/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Data Table</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/dialog/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Dialog</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/elevation/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Elevation</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/fab/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">FAB</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/fab-morph/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">FAB Morph</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/form-storage/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Form Storage</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/icons/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Icons</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/infinite-scroll/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Infinite Scroll</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/inputs/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Inputs</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/gauge/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Gauge</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/grid/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Grid / Layout Grid</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/lazy-load/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Lazy Load</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/list/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">List View</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/list-index/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">List Index</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/login-screen/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Login Screen</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/messages/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Messages</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/navbar/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Navbar</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/notifications/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Notifications</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/panel/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Panel / Side Panels</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/picker/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Picker</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/photo-browser/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Photo Browser</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/popup/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Popup</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/popover/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Popover</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/preloader/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Preloader</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/progressbar/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Progress Bar</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/pull-to-refresh/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Pull To Refresh</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/radio/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Radio</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/range/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Range Slider</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/searchbar/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Searchbar</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/searchbar-expandable/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Searchbar Expandable</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/sheet-modal/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Sheet Modal</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/smart-select/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Smart Select</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/sortable/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Sortable List</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/statusbar/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Statusbar</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/stepper/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Stepper</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/subnavbar/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Subnavbar</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/swipeout/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Swipeout (Swipe To Delete)</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/swiper/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Swiper Slider</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/tabs/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Tabs</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/timeline/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Timeline</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/toast/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Toast</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/toggle/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Toggle</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/toolbar-tabbar/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Toolbar & Tabbar</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/tooltip/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Tooltip</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/virtual-list/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Virtual List</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="item-content item-link" href="/vi/">
+                    <div class="item-media"><i class="icon icon-vi"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">vi - Mobile Video SSP</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="list simple-list searchbar-not-found">
+              <ul>
+                <li>Nothing found</li>
+              </ul>
+            </div>
+            <div class="block-title searchbar-hide-on-search">Themes</div>
+            <div class="list links-list searchbar-hide-on-search">
+              <ul>
+                <li>
+                  <a href="/./index.html?theme=ios" class="external">iOS Theme</a>
+                </li>
+                <li>
+                  <a href="/./index.html?theme=md" class="external">Material (MD) Theme</a>
+                </li>
+                <li>
+                  <a href="/color-themes/">Color Themes</a>
+                </li>
+              </ul>
+            </div>
+            <div class="block-title searchbar-hide-on-search">Page Loaders & Router</div>
+            <div class="list links-list searchbar-hide-on-search">
+              <ul>
+                <li>
+                  <a href="/page-loader-template7/vladimir/123/about-me/1/?start=0&end=30#top">Template7 Page</a>
+                </li>
+                <li>
+                  <a href="/page-loader-component/vladimir/123/about-me/1/?start=0&end=30#top">Component Page</a>
+                </li>
+                <li>
+                  <a href="/load-something-that-doesnt-exist/">Default Route (404)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="/core/js/framework7.min.js"></script>
+    <script type="text/javascript">
+    var routes = [
+      // Index page
+      {
+        path: '/',
+        url: './index.html',
+        name: 'home',
+      },
+      // About page
+      {
+        path: '/about/',
+        url: './pages/about.html',
+        name: 'about',
+      },
+      // Right Panel pages
+      {
+        path: '/panel-right-1/',
+        content: '\
+          <div class="page">\
+            <div class="navbar">\
+              <div class="navbar-inner sliding">\
+                <div class="left">\
+                  <a href="#" class="link back">\
+                    <i class="icon icon-back"></i>\
+                    <span class="ios-only">Back</span>\
+                  </a>\
+                </div>\
+                <div class="title">Panel Page 1</div>\
+              </div>\
+            </div>\
+            <div class="page-content">\
+              <div class="block">\
+                <p>This is a right panel page 1</p>\
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo saepe aspernatur inventore dolorum voluptates consequatur tempore ipsum! Quia, incidunt, aliquam sit veritatis nisi aliquid porro similique ipsa mollitia eaque ex!</p>\
+              </div>\
+            </div>\
+          </div>\
+        ',
+      },
+      {
+        path: '/panel-right-2/',
+        content: '\
+          <div class="page">\
+            <div class="navbar">\
+              <div class="navbar-inner sliding">\
+                <div class="left">\
+                  <a href="#" class="link back">\
+                    <i class="icon icon-back"></i>\
+                    <span class="ios-only">Back</span>\
+                  </a>\
+                </div>\
+                <div class="title">Panel Page 2</div>\
+              </div>\
+            </div>\
+            <div class="page-content">\
+              <div class="block">\
+                <p>This is a right panel page 2</p>\
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo saepe aspernatur inventore dolorum voluptates consequatur tempore ipsum! Quia, incidunt, aliquam sit veritatis nisi aliquid porro similique ipsa mollitia eaque ex!</p>\
+              </div>\
+            </div>\
+          </div>\
+        ',
+      },
+
+      // Components
+      {
+        path: '/accordion/',
+        url: './pages/accordion.html',
+      },
+      {
+        path: '/action-sheet/',
+        componentUrl: './pages/action-sheet.html',
+      },
+      {
+        path: '/autocomplete/',
+        componentUrl: './pages/autocomplete.html',
+      },
+      {
+        path: '/badge/',
+        componentUrl: './pages/badge.html',
+      },
+      {
+        path: '/buttons/',
+        url: './pages/buttons.html',
+      },
+      {
+        path: '/calendar/',
+        componentUrl: './pages/calendar.html',
+      },
+      {
+        path: '/calendar-page/',
+        componentUrl: './pages/calendar-page.html',
+      },
+      {
+        path: '/cards/',
+        url: './pages/cards.html',
+      },
+      {
+        path: '/checkbox/',
+        url: './pages/checkbox.html',
+      },
+      {
+        path: '/chips/',
+        componentUrl: './pages/chips.html',
+      },
+      {
+        path: '/contacts-list/',
+        url: './pages/contacts-list.html',
+      },
+      {
+        path: '/content-block/',
+        url: './pages/content-block.html',
+      },
+      {
+        path: '/data-table/',
+        componentUrl: './pages/data-table.html',
+      },
+      {
+        path: '/dialog/',
+        componentUrl: './pages/dialog.html',
+      },
+      {
+        path: '/elevation/',
+        url: './pages/elevation.html',
+      },
+      {
+        path: '/fab/',
+        url: './pages/fab.html',
+      },
+      {
+        path: '/fab-morph/',
+        url: './pages/fab-morph.html',
+      },
+      {
+        path: '/form-storage/',
+        url: './pages/form-storage.html',
+      },
+      {
+        path: '/gauge/',
+        componentUrl: './pages/gauge.html',
+      },
+      {
+        path: '/grid/',
+        url: './pages/grid.html',
+      },
+      {
+        path: '/icons/',
+        componentUrl: './pages/icons.html',
+      },
+      {
+        path: '/infinite-scroll/',
+        componentUrl: './pages/infinite-scroll.html',
+      },
+      {
+        path: '/inputs/',
+        url: './pages/inputs.html',
+      },
+      {
+        path: '/lazy-load/',
+        url: './pages/lazy-load.html',
+      },
+      {
+        path: '/list/',
+        url: './pages/list.html',
+      },
+      {
+        path: '/list-index/',
+        componentUrl: './pages/list-index.html',
+      },
+      {
+        path: '/login-screen/',
+        componentUrl: './pages/login-screen.html',
+      },
+      {
+        path: '/login-screen-page/',
+        componentUrl: './pages/login-screen-page.html',
+      },
+      {
+        path: '/messages/',
+        componentUrl: './pages/messages.html',
+      },
+      {
+        path: '/navbar/',
+        url: './pages/navbar.html',
+      },
+      {
+        path: '/navbar-hide-scroll/',
+        url: './pages/navbar-hide-scroll.html',
+      },
+      {
+        path: '/notifications/',
+        componentUrl: './pages/notifications.html',
+      },
+      {
+        path: '/panel/',
+        url: './pages/panel.html',
+      },
+      {
+        path: '/photo-browser/',
+        componentUrl: './pages/photo-browser.html',
+      },
+      {
+        path: '/picker/',
+        componentUrl: './pages/picker.html',
+      },
+      {
+        path: '/popup/',
+        componentUrl: './pages/popup.html',
+      },
+      {
+        path: '/popover/',
+        url: './pages/popover.html',
+      },
+      {
+        path: '/preloader/',
+        componentUrl: './pages/preloader.html',
+      },
+      {
+        path: '/progressbar/',
+        componentUrl: './pages/progressbar.html',
+      },
+      {
+        path: '/pull-to-refresh/',
+        componentUrl: './pages/pull-to-refresh.html',
+      },
+      {
+        path: '/radio/',
+        url: './pages/radio.html',
+      },
+      {
+        path: '/range/',
+        componentUrl: './pages/range.html',
+      },
+      {
+        path: '/searchbar/',
+        url: './pages/searchbar.html',
+      },
+      {
+        path: '/searchbar-expandable/',
+        url: './pages/searchbar-expandable.html',
+      },
+      {
+        path: '/sheet-modal/',
+        componentUrl: './pages/sheet-modal.html',
+      },
+      {
+        path: '/smart-select/',
+        url: './pages/smart-select.html',
+      },
+      {
+        path: '/sortable/',
+        url: './pages/sortable.html',
+      },
+      {
+        path: '/statusbar/',
+        componentUrl: './pages/statusbar.html',
+      },
+      {
+        path: '/stepper/',
+        componentUrl: './pages/stepper.html',
+      },
+      {
+        path: '/subnavbar/',
+        url: './pages/subnavbar.html',
+      },
+      {
+        path: '/subnavbar-title/',
+        url: './pages/subnavbar-title.html',
+      },
+      {
+        path: '/swiper/',
+        url: './pages/swiper.html',
+        routes: [
+          {
+            path: 'swiper-horizontal/',
+            url: './pages/swiper-horizontal.html',
+          },
+          {
+            path: 'swiper-vertical/',
+            url: './pages/swiper-vertical.html',
+          },
+          {
+            path: 'swiper-space-between/',
+            url: './pages/swiper-space-between.html',
+          },
+          {
+            path: 'swiper-multiple/',
+            url: './pages/swiper-multiple.html',
+          },
+          {
+            path: 'swiper-nested/',
+            url: './pages/swiper-nested.html',
+          },
+          {
+            path: 'swiper-loop/',
+            url: './pages/swiper-loop.html',
+          },
+          {
+            path: 'swiper-3d-cube/',
+            url: './pages/swiper-3d-cube.html',
+          },
+          {
+            path: 'swiper-3d-coverflow/',
+            url: './pages/swiper-3d-coverflow.html',
+          },
+          {
+            path: 'swiper-3d-flip/',
+            url: './pages/swiper-3d-flip.html',
+          },
+          {
+            path: 'swiper-fade/',
+            url: './pages/swiper-fade.html',
+          },
+          {
+            path: 'swiper-scrollbar/',
+            url: './pages/swiper-scrollbar.html',
+          },
+          {
+            path: 'swiper-gallery/',
+            componentUrl: './pages/swiper-gallery.html',
+          },
+          {
+            path: 'swiper-custom-controls/',
+            url: './pages/swiper-custom-controls.html',
+          },
+          {
+            path: 'swiper-parallax/',
+            url: './pages/swiper-parallax.html',
+          },
+          {
+            path: 'swiper-lazy/',
+            url: './pages/swiper-lazy.html',
+          },
+          {
+            path: 'swiper-pagination-progress/',
+            url: './pages/swiper-pagination-progress.html',
+          },
+          {
+            path: 'swiper-pagination-fraction/',
+            url: './pages/swiper-pagination-fraction.html',
+          },
+          {
+            path: 'swiper-zoom/',
+            url: './pages/swiper-zoom.html',
+          },
+        ],
+      },
+      {
+        path: '/swipeout/',
+        componentUrl: './pages/swipeout.html',
+      },
+      {
+        path: '/tabs/',
+        url: './pages/tabs.html',
+      },
+      {
+        path: '/tabs-static/',
+        url: './pages/tabs-static.html',
+      },
+      {
+        path: '/tabs-animated/',
+        url: './pages/tabs-animated.html',
+      },
+      {
+        path: '/tabs-swipeable/',
+        url: './pages/tabs-swipeable.html',
+      },
+      {
+        path: '/tabs-routable/',
+        url: './pages/tabs-routable.html',
+        tabs: [
+          {
+            path: '/',
+            id: 'tab1',
+            content: ' \
+            <div class="block"> \
+              <p>Tab 1 content</p> \
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam enim quia molestiae facilis laudantium voluptates obcaecati officia cum, sit libero commodi. Ratione illo suscipit temporibus sequi iure ad laboriosam accusamus?</p> \
+              <p>Saepe explicabo voluptas ducimus provident, doloremque quo totam molestias! Suscipit blanditiis eaque exercitationem praesentium reprehenderit, fuga accusamus possimus sed, sint facilis ratione quod, qui dignissimos voluptas! Aliquam rerum consequuntur deleniti.</p> \
+              <p>Totam reprehenderit amet commodi ipsum nam provident doloremque possimus odio itaque, est animi culpa modi consequatur reiciendis corporis libero laudantium sed eveniet unde delectus a maiores nihil dolores? Natus, perferendis.</p> \
+            </div> \
+            ',
+          },
+          {
+            path: '/tab2/',
+            id: 'tab2',
+            content: '\
+            <div class="block"> \
+              <p>Tab 2 content</p> \
+              <p>Suscipit, facere quasi atque totam. Repudiandae facilis at optio atque, rem nam, natus ratione cum enim voluptatem suscipit veniam! Repellat, est debitis. Modi nam mollitia explicabo, unde aliquid impedit! Adipisci!</p> \
+              <p>Deserunt adipisci tempora asperiores, quo, nisi ex delectus vitae consectetur iste fugiat iusto dolorem autem. Itaque, ipsa voluptas, a assumenda rem, dolorum porro accusantium, officiis veniam nostrum cum cumque impedit.</p> \
+              <p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p> \
+            </div> \
+            ',
+          },
+          {
+            path: '/tab3/',
+            id: 'tab3',
+            content: '\
+            <div class="block"> \
+              <p>Tab 3 content</p> \
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam enim quia molestiae facilis laudantium voluptates obcaecati officia cum, sit libero commodi. Ratione illo suscipit temporibus sequi iure ad laboriosam accusamus?</p> \
+              <p>Deserunt adipisci tempora asperiores, quo, nisi ex delectus vitae consectetur iste fugiat iusto dolorem autem. Itaque, ipsa voluptas, a assumenda rem, dolorum porro accusantium, officiis veniam nostrum cum cumque impedit.</p> \
+              <p>Laborum illum ipsa voluptatibus possimus nesciunt ex consequatur rem, natus ad praesentium rerum libero consectetur temporibus cupiditate atque aspernatur, eaque provident eligendi quaerat ea soluta doloremque. Iure fugit, minima facere.</p> \
+            </div> \
+            ',
+          },
+        ],
+      },
+      {
+        path: '/toast/',
+        componentUrl: './pages/toast.html',
+      },
+      {
+        path: '/toggle/',
+        url: './pages/toggle.html',
+      },
+      {
+        path: '/toolbar-tabbar/',
+        componentUrl: './pages/toolbar-tabbar.html',
+        routes: [
+          {
+            path: 'tabbar/',
+            componentUrl: './pages/tabbar.html',
+          },
+          {
+            path: 'tabbar-labels/',
+            componentUrl: './pages/tabbar-labels.html',
+          },
+          {
+            path: 'tabbar-scrollable/',
+            componentUrl: './pages/tabbar-scrollable.html',
+          },
+          {
+            path: 'toolbar-hide-scroll/',
+            url: './pages/toolbar-hide-scroll.html',
+          },
+        ],
+      },
+      {
+        path: '/tooltip/',
+        componentUrl: './pages/tooltip.html',
+      },
+      {
+        path: '/timeline/',
+        url: './pages/timeline.html',
+      },
+      {
+        path: '/timeline-vertical/',
+        url: './pages/timeline-vertical.html',
+      },
+      {
+        path: '/timeline-horizontal/',
+        url: './pages/timeline-horizontal.html',
+      },
+      {
+        path: '/timeline-horizontal-calendar/',
+        url: './pages/timeline-horizontal-calendar.html',
+      },
+      {
+        path: '/virtual-list/',
+        componentUrl: './pages/virtual-list.html',
+      },
+      {
+        path: '/vi/',
+        componentUrl: './pages/vi.html',
+      },
+
+      // Color Themes
+      {
+        path: '/color-themes/',
+        componentUrl: './pages/color-themes.html',
+      },
+
+      // Page Loaders
+      {
+        path: '/page-loader-template7/:user/:userId/:posts/:postId/',
+        templateUrl: './pages/page-loader-template7.html',
+        // additional context
+        options: {
+          context: {
+            foo: 'bar',
+          },
+        },
+      },
+      {
+        path: '/page-loader-component/:user/:userId/:posts/:postId/',
+        componentUrl: './pages/page-loader-component.html',
+        // additional context
+        options: {
+          context: {
+            foo: 'bar',
+          },
+        },
+      },
+
+      // Default route (404 page). MUST BE THE LAST
+      {
+        path: '(.*)',
+        url: './pages/404.html',
+      },
+    ];
+
+    </script>
+    <%= javascript_include_tag 'app' %>
+  </body>
+</html>

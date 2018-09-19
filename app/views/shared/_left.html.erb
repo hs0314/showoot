@@ -1,0 +1,36 @@
+<div class="block-title">왼쪽 메뉴</div>
+<div class="list links-list">
+  <ul>
+    <li>
+      <% if current_user %>
+        <%= link_to "로그아웃", destroy_user_session_path, method: :delete, class: "panel-close" %>
+      <% else %>
+        <%= link_to "로그인", new_user_session_path, class: "panel-close" %>
+      <% end %>
+    </li>
+    <li>
+      <a href="/action-sheet/" class="panel-close">Action Sheet</a>
+    </li>
+    <li>
+      <a href="/badge/" class="panel-close">Badge</a>
+    </li>
+    <li>
+      <a href="/buttons/" class="panel-close">Buttons</a>
+    </li>
+    <li>
+      <a href="/cards/" class="panel-close">Cards</a>
+    </li>
+    <li>
+      <a href="/checkbox/" class="panel-close">Checkbox</a>
+    </li>
+    <li>
+      <a href="/chips/" class="panel-close">Chips/Tags</a>
+    </li>
+    <li>
+      <a href="/contacts-list/" class="panel-close">Contacts List</a>
+    </li>
+    <li>
+      <a href="/data-table/" class="panel-close">Data Table</a>
+    </li>
+  </ul>
+</div>

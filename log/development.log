@@ -1,0 +1,279 @@
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE DATABASE "mobile_development" ENCODING = 'unicode'[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "mobile_test" ENCODING = 'unicode'[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_admin_comments"[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "namespace" varchar, "body" text, "resource_type" varchar, "resource_id" bigint, "author_type" varchar, "author_id" bigint, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments" ("author_type", "author_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to DeviseCreateUsers (20180705071926)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180705071926_devise_create_users.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20180705071926_devise_create_users.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20180705071926_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705071926"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to DeviseCreateAdminUsers (20180705072008)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180705072008_devise_create_admin_users.rb:5
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_email" ON "admin_users" ("email")[0m
+  ↳ db/migrate/20180705072008_devise_create_admin_users.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "admin_users" ("reset_password_token")[0m
+  ↳ db/migrate/20180705072008_devise_create_admin_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072008"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to CreateActiveAdminComments (20180705072011)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "namespace" varchar, "body" text, "resource_type" varchar, "resource_id" integer, "author_type" varchar, "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180705072011_create_active_admin_comments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  ↳ db/migrate/20180705072011_create_active_admin_comments.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments" ("author_type", "author_id")[0m
+  ↳ db/migrate/20180705072011_create_active_admin_comments.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  ↳ db/migrate/20180705072011_create_active_admin_comments.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072011"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to CreateVersions (20180705072026)
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "versions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "item_type" varchar NOT NULL, "item_id" integer NOT NULL, "event" varchar NOT NULL, "whodunnit" varchar, "object" text(1073741823), "created_at" datetime)[0m
+  ↳ db/migrate/20180705072026_create_versions.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_versions_on_item_type_and_item_id" ON "versions" ("item_type", "item_id")[0m
+  ↳ db/migrate/20180705072026_create_versions.rb:34
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072026"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to AddObjectChangesToVersions (20180705072027)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "versions" ADD "object_changes" text(1073741823)[0m
+  ↳ db/migrate/20180705072027_add_object_changes_to_versions.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072027"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to CreatePages (20180705072028)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "pages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "name" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180705072028_create_pages.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_pages_on_name" ON "pages" ("name")[0m
+  ↳ db/migrate/20180705072028_create_pages.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072028"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to CreateSettings (20180705072030)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "settings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "name" varchar, "body" text, "image" varchar, "url" varchar, "position" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180705072030_create_settings.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_settings_on_name" ON "settings" ("name")[0m
+  ↳ db/migrate/20180705072030_create_settings.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_settings_on_position" ON "settings" ("position")[0m
+  ↳ db/migrate/20180705072030_create_settings.rb:14
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072030"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to CreatePosts (20180705072032)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "body" text, "image" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180705072032_create_posts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  ↳ db/migrate/20180705072032_create_posts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072032"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to CreateComments (20180705072034)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180705072034_create_comments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/migrate/20180705072034_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072034"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to CreateFaqs (20180705072036)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "faqs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "position" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180705072036_create_faqs.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_faqs_on_position" ON "faqs" ("position")[0m
+  ↳ db/migrate/20180705072036_create_faqs.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072036"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to CreateMessages (20180705072038)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "messages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_273a25a7a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180705072038_create_messages.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_messages_on_user_id" ON "messages" ("user_id")[0m
+  ↳ db/migrate/20180705072038_create_messages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072038"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to CreateIntros (20180705072040)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "intros" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "image" varchar, "position" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180705072040_create_intros.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_intros_on_position" ON "intros" ("position")[0m
+  ↳ db/migrate/20180705072040_create_intros.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072040"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Migrating to AddColsToUsers (20180705072042)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_users_on_name" ON "users" ("name")[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "username" varchar[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_username" ON "users" ("username")[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "image" varchar[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "phone" varchar[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_users_on_phone" ON "users" ("phone")[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "zipcode" varchar[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "address1" varchar[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "address2" varchar[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "deleted_at" datetime[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_users_on_deleted_at" ON "users" ("deleted_at")[0m
+  ↳ db/migrate/20180705072042_add_cols_to_users.rb:14
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180705072042"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-19 08:17:41.021220"], ["updated_at", "2018-09-19 08:17:41.021220"]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2018-09-19 17:17:49 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.4ms)
+  Rendered shared/_left.html.erb (6.8ms)
+  Rendered shared/_right.html.erb (0.8ms)
+  Rendered home/index.html.erb within layouts/application (18.3ms)
+  Rendered shared/_routes.html.erb (5.0ms)
+Completed 200 OK in 6038ms (Views: 6026.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-19 17:18:08 +0900
+Processing by Users::SessionsController#new as */*
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_navback.html.erb (0.6ms)
+  Rendered shared/_toolbar.html.erb (0.5ms)
+  Rendered shared/_input.html.erb (10.8ms)
+  Rendered shared/_input.html.erb (1.4ms)
+  Rendered shared/_submit.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.8ms)
+  Rendered shared/_routes.html.erb (6.7ms)
+Completed 200 OK in 109ms (Views: 86.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-19 17:21:03 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_left.html.erb (4.7ms)
+  Rendered shared/_right.html.erb (0.3ms)
+  Rendered home/index.html.erb within layouts/application (13.3ms)
+  Rendered shared/_routes.html.erb (7.3ms)
+Completed 200 OK in 452ms (Views: 441.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-19 17:24:35 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.4ms)
+  Rendered shared/_left.html.erb (5.7ms)
+  Rendered shared/_right.html.erb (0.4ms)
+  Rendered home/index.html.erb within layouts/application (23.2ms)
+  Rendered shared/_routes.html.erb (7.6ms)
+Completed 200 OK in 586ms (Views: 571.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-09-19 17:24:42 +0900
+Processing by Users::SessionsController#new as */*
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_navback.html.erb (0.4ms)
+  Rendered shared/_toolbar.html.erb (1.0ms)
+  Rendered shared/_input.html.erb (3.7ms)
+  Rendered shared/_input.html.erb (0.8ms)
+  Rendered shared/_submit.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (28.5ms)
+  Rendered shared/_routes.html.erb (7.5ms)
+Completed 200 OK in 190ms (Views: 147.8ms | ActiveRecord: 1.3ms)
+
+
