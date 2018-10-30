@@ -51,43 +51,6 @@ ActiveRecord::Schema.define(version: 2018_07_05_072042) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "faqs", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["position"], name: "index_faqs_on_position"
-  end
-
-  create_table "intros", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.string "image"
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["position"], name: "index_intros_on_position"
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "pages", force: :cascade do |t|
-    t.string "title"
-    t.string "name"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_pages_on_name"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
@@ -96,19 +59,6 @@ ActiveRecord::Schema.define(version: 2018_07_05_072042) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "settings", force: :cascade do |t|
-    t.string "title"
-    t.string "name"
-    t.text "body"
-    t.string "image"
-    t.string "url"
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_settings_on_name"
-    t.index ["position"], name: "index_settings_on_position"
   end
 
   create_table "users", force: :cascade do |t|
