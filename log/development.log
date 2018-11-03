@@ -767,3 +767,1708 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-30 12:57:07 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 5.1ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:5:in `index'
+Started GET "/" for 127.0.0.1 at 2018-10-30 12:57:30 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 189ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-30 12:57:30 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (33.0ms)
+  Rendered shared/_routes.html.erb (3.4ms)
+Completed 200 OK in 1401ms (Views: 1395.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-10-30 12:57:32 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-30 12:57:35 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FxUxuMVFgzrA8yYeANcUCenM7bnzYIQqeQjppy/51ACYaWaKBpfvtp1urAQ3vLzVaHEsKqPOa3H53DgyDlRaCw==", "user"=>{"email"=>"test@1.1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@1.1"], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-10-30 03:57:36.020689"], ["last_sign_in_at", "2018-09-19 15:18:51.460625"], ["sign_in_count", 3], ["updated_at", "2018-10-30 03:57:36.022506"], ["id", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 377ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-30 12:57:36 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered home/index.html.erb within layouts/application (14.1ms)
+  Rendered shared/_routes.html.erb (4.8ms)
+Completed 200 OK in 210ms (Views: 202.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-10-30 12:57:36 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 12:57:38 +0900
+Processing by PostsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.3ms)
+  Rendered shared/_inline_calendar.html.erb (0.8ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/posts/index.html.erb:11
+  Rendered posts/index.html.erb within layouts/application (154.0ms)
+  Rendered shared/_routes.html.erb (6.3ms)
+Completed 200 OK in 492ms (Views: 399.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-10-30 12:57:41 +0900
+Processing by PostsController#new as */*
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:2
+  Rendered posts/_form.html.erb (7.3ms)
+  Rendered posts/new.html.erb within layouts/application (83.1ms)
+  Rendered shared/_routes.html.erb (6.6ms)
+Completed 200 OK in 381ms (Views: 291.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2018-10-30 12:57:50 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-10-30 12:57:50 +0900
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sOKbctkMxFV4BMV8N6dgTNEg7nmVyilOnpsRUNE0gl0Ig4txC63wayFW+q7XYu6Kw1Z01ACMxp/cGWokoTh7Fg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-30 12:57:50 +0900
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-10-30 12:57:50 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (8.0ms)
+  Rendered shared/_routes.html.erb (6.1ms)
+Completed 200 OK in 222ms (Views: 218.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-10-30 12:57:51 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-10-30 14:50:34 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SUOK17Bz2rdfyNoFXlnHu/BcvOzlPCs3XArCSPDXxSPyPhQsDl9Bxqu9dzqGyK5h0bcGNax8D9dv3RG9Mbg4Ow==", "user"=>{"email"=>"test@1.1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@1.1"], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-10-30 05:50:34.444683"], ["last_sign_in_at", "2018-10-30 03:57:36.020689"], ["sign_in_count", 4], ["updated_at", "2018-10-30 05:50:34.445970"], ["id", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 201ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-30 14:50:34 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered home/index.html.erb within layouts/application (5.9ms)
+  Rendered shared/_routes.html.erb (2.3ms)
+Completed 200 OK in 75ms (Views: 68.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-10-30 14:50:35 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/posts" for 127.0.0.1 at 2018-10-30 14:50:36 +0900
+Processing by PostsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:5
+  Rendering posts/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.4ms)
+  Rendered shared/_inline_calendar.html.erb (0.3ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/posts/index.html.erb:11
+  Rendered posts/index.html.erb within layouts/application (82.1ms)
+  Rendered shared/_routes.html.erb (2.8ms)
+Completed 200 OK in 286ms (Views: 239.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-03 17:44:55 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered home/index.html.erb within layouts/application (948.8ms)
+Completed 500 Internal Server Error in 1053ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `posts_path' for #<#<Class:0x00007fc09d9eb410>:0x00007fc098f9d1b0>
+Did you mean?  password_path):
+    44:             <% end %>
+    45:           </li>
+    46:           <li>
+    47:             <%= link_to posts_path, class: "item-content item-link" do %>
+    48:               <div class="item-inner">
+    49:                 <div class="item-title">포스트</div>
+    50:               </div>
+  
+app/views/home/index.html.erb:47:in `_app_views_home_index_html_erb___4368490888652266742_70232588381840'
+Started GET "/" for 127.0.0.1 at 2018-11-03 17:45:41 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered home/index.html.erb within layouts/application (897.3ms)
+Completed 500 Internal Server Error in 936ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `posts_path' for #<#<Class:0x00007fc09d9eb410>:0x00007fc09ec55678>
+Did you mean?  password_path):
+    44:             <% end %>
+    45:           </li>
+    46:           <li>
+    47:             <%= link_to posts_path, class: "item-content item-link" do %>
+    48:               <div class="item-inner">
+    49:                 <div class="item-title">포스트</div>
+    50:               </div>
+  
+app/views/home/index.html.erb:47:in `_app_views_home_index_html_erb___4368490888652266742_70232637092760'
+Started GET "/" for 127.0.0.1 at 2018-11-03 17:46:09 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered home/index.html.erb within layouts/application (849.3ms)
+Completed 500 Internal Server Error in 892ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `posts_path' for #<#<Class:0x00007fc09d9eb410>:0x00007fc09ed4bf28>
+Did you mean?  password_path):
+    44:             <% end %>
+    45:           </li>
+    46:           <li>
+    47:             <%= link_to posts_path, class: "item-content item-link" do %>
+    48:               <div class="item-inner">
+    49:                 <div class="item-title">포스트</div>
+    50:               </div>
+  
+app/views/home/index.html.erb:47:in `_app_views_home_index_html_erb___4368490888652266742_70232637605000'
+Started GET "/" for 127.0.0.1 at 2018-11-03 17:46:54 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered home/index.html.erb within layouts/application (10.0ms)
+  Rendered shared/_routes.html.erb (10.0ms)
+Completed 200 OK in 1484ms (Views: 1452.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 17:46:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 17:47:03 +0900
+  
+SyntaxError (/Users/heesu/Desktop/dev/ruby/showoot/app/controllers/diary_controller.rb:19: formal argument cannot be an instance variable
+  def edit_post(@post)
+                     ^
+/Users/heesu/Desktop/dev/ruby/showoot/app/controllers/diary_controller.rb:23: formal argument cannot be an instance variable
+  def update_post(@post)
+                       ^
+/Users/heesu/Desktop/dev/ruby/showoot/app/controllers/diary_controller.rb:27: formal argument cannot be an instance variable
+  def destroy_post(@post)
+                        ^):
+  
+app/controllers/diary_controller.rb:19: formal argument cannot be an instance variable
+app/controllers/diary_controller.rb:23: formal argument cannot be an instance variable
+app/controllers/diary_controller.rb:27: formal argument cannot be an instance variable
+Started GET "/" for 127.0.0.1 at 2018-11-03 17:48:07 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.5ms)
+  Rendered home/index.html.erb within layouts/application (7.7ms)
+  Rendered shared/_routes.html.erb (1.8ms)
+Completed 200 OK in 120ms (Views: 82.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 17:48:08 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 17:48:09 +0900
+  
+SyntaxError (/Users/heesu/Desktop/dev/ruby/showoot/app/controllers/diary_controller.rb:19: formal argument cannot be an instance variable
+  def edit_post(@post)
+                     ^
+/Users/heesu/Desktop/dev/ruby/showoot/app/controllers/diary_controller.rb:23: formal argument cannot be an instance variable
+  def update_post(@post)
+                       ^
+/Users/heesu/Desktop/dev/ruby/showoot/app/controllers/diary_controller.rb:27: formal argument cannot be an instance variable
+  def destroy_post(@post)
+                        ^):
+  
+app/controllers/diary_controller.rb:19: formal argument cannot be an instance variable
+app/controllers/diary_controller.rb:23: formal argument cannot be an instance variable
+app/controllers/diary_controller.rb:27: formal argument cannot be an instance variable
+Started GET "/" for 127.0.0.1 at 2018-11-03 17:48:52 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.5ms)
+  Rendered home/index.html.erb within layouts/application (9.4ms)
+  Rendered shared/_routes.html.erb (4.6ms)
+Completed 200 OK in 137ms (Views: 89.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 17:48:53 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 17:48:53 +0900
+Processing by DiaryController#index_post as */*
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for PostsController:Class):
+  
+app/controllers/posts_controller.rb:6:in `index'
+app/controllers/diary_controller.rb:4:in `index_post'
+Started GET "/users/sign_out" for 127.0.0.1 at 2018-11-03 17:49:22 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-11-03 17:49:22 +0900
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LicaQjsbQkiCuJ+19ea0RR/sTc27vLRmpd5Akta2x82pY3/NPeQYCcJ8zYgqJJEtVLvNc3oQWqoRMwyoOFVA/Q=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-03 17:49:22 +0900
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-03 17:49:23 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (9.1ms)
+  Rendered shared/_routes.html.erb (2.5ms)
+Completed 200 OK in 121ms (Views: 117.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 17:49:23 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-11-03 17:49:26 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nvSIyb/NUkyo3Y8E1xVep2DQE7c59ivgmCmokKiIbKqm749+affwmoDLVWchPhFIaTtx1yvjqEfdzBG2SHtfGg==", "user"=>{"email"=>"test@1.1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "button"=>""}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@1.1"], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-11-03 08:49:26.686396"], ["last_sign_in_at", "2018-10-30 05:50:34.444683"], ["sign_in_count", 5], ["updated_at", "2018-11-03 08:49:26.687648"], ["id", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 299ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-03 17:49:26 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered home/index.html.erb within layouts/application (13.3ms)
+  Rendered shared/_routes.html.erb (3.1ms)
+Completed 200 OK in 136ms (Views: 122.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 17:49:27 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 17:49:28 +0900
+Processing by DiaryController#index_post as */*
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for PostsController:Class):
+  
+app/controllers/posts_controller.rb:6:in `index'
+app/controllers/diary_controller.rb:4:in `index_post'
+Started GET "/" for 127.0.0.1 at 2018-11-03 17:50:45 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (2.7ms)
+  Rendered home/index.html.erb within layouts/application (13.2ms)
+  Rendered shared/_routes.html.erb (3.6ms)
+Completed 200 OK in 204ms (Views: 100.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 17:50:46 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 17:50:47 +0900
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.5ms)
+  Rendered shared/_inline_calendar.html.erb (0.4ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/index_post.html.erb within layouts/application (243.1ms)
+  Rendered shared/_routes.html.erb (6.7ms)
+Completed 200 OK in 692ms (Views: 548.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-03 20:58:03 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered home/index.html.erb within layouts/application (7.0ms)
+  Rendered shared/_routes.html.erb (4.5ms)
+Completed 200 OK in 143ms (Views: 88.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 20:58:05 +0900
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 20:58:05 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_inline_calendar.html.erb (1.8ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/index_post.html.erb within layouts/application (291.9ms)
+  Rendered shared/_routes.html.erb (12.8ms)
+Completed 200 OK in 791ms (Views: 689.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/diary/new_post" for 127.0.0.1 at 2018-11-03 20:58:07 +0900
+Processing by DiaryController#new_post as */*
+  Rendering diary/new_post.html.erb within layouts/application
+  Rendered diary/_post_form.html.erb (88.0ms)
+  Rendered diary/new_post.html.erb within layouts/application (268.3ms)
+Completed 500 Internal Server Error in 624ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@post) do |f| %>
+    2:   <%= f.hidden_field :user_id, :value => current_user.id %>
+    3:   <% if @post.errors.any? %>
+    4:   <div id="errorExplanation">
+  
+app/views/diary/_post_form.html.erb:1:in `_app_views_diary__post_form_html_erb___4146128348983229239_70232636318820'
+app/views/diary/new_post.html.erb:2:in `_app_views_diary_new_post_html_erb__2239245230688209004_70232643694960'
+Started GET "/" for 127.0.0.1 at 2018-11-03 20:58:50 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered home/index.html.erb within layouts/application (7.6ms)
+  Rendered shared/_routes.html.erb (5.5ms)
+Completed 200 OK in 197ms (Views: 136.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 20:58:51 +0900
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 20:58:52 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (2.0ms)
+  Rendered shared/_inline_calendar.html.erb (9.9ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/index_post.html.erb within layouts/application (352.0ms)
+  Rendered shared/_routes.html.erb (5.8ms)
+Completed 200 OK in 1003ms (Views: 902.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/diary/new_post" for 127.0.0.1 at 2018-11-03 20:58:54 +0900
+Processing by DiaryController#new_post as */*
+  Rendering diary/new_post.html.erb within layouts/application
+  Rendered diary/_post_form.html.erb (678.9ms)
+  Rendered diary/new_post.html.erb within layouts/application (852.8ms)
+Completed 500 Internal Server Error in 1133ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `posts_path' for #<#<Class:0x00007fc0a022f660>:0x00007fc099d64988>
+Did you mean?  password_path):
+    1: <%= form_for(@post) do |f| %>
+    2:   <%= f.hidden_field :user_id, :value => current_user.id %>
+    3:   <% if @post.errors.any? %>
+    4:   <div id="errorExplanation">
+  
+app/views/diary/_post_form.html.erb:1:in `_app_views_diary__post_form_html_erb___4146128348983229239_70232595195740'
+app/views/diary/new_post.html.erb:2:in `_app_views_diary_new_post_html_erb__2239245230688209004_70232590103680'
+Started GET "/" for 127.0.0.1 at 2018-11-03 21:02:06 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.9ms)
+  Rendered home/index.html.erb within layouts/application (11.5ms)
+  Rendered shared/_routes.html.erb (5.6ms)
+Completed 200 OK in 132ms (Views: 105.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:02:07 +0900
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 21:02:07 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_inline_calendar.html.erb (11.2ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/index_post.html.erb within layouts/application (254.9ms)
+  Rendered shared/_routes.html.erb (4.7ms)
+Completed 200 OK in 790ms (Views: 701.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/diary/new_post" for 127.0.0.1 at 2018-11-03 21:02:09 +0900
+Processing by DiaryController#new_post as */*
+  Rendering diary/new_post.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/diary/_post_form.html.erb:2
+  Rendered diary/_post_form.html.erb (206.1ms)
+  Rendered diary/new_post.html.erb within layouts/application (306.3ms)
+Completed 500 Internal Server Error in 662ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"create_post", :controller=>"DiaryController"}):
+    1: <%= form_for @post, url: {controller: "DiaryController", action: "create_post"} do |f| %>
+    2:   <%= f.hidden_field :user_id, :value => current_user.id %>
+    3:   <% if @post.errors.any? %>
+    4:   <div id="errorExplanation">
+  
+app/views/diary/_post_form.html.erb:1:in `_app_views_diary__post_form_html_erb___4146128348983229239_70232650013320'
+app/views/diary/new_post.html.erb:2:in `_app_views_diary_new_post_html_erb__2239245230688209004_70232673508880'
+Started GET "/" for 127.0.0.1 at 2018-11-03 21:02:42 +0900
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/heesu/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered home/index.html.erb within layouts/application (11.0ms)
+  Rendered shared/_routes.html.erb (6.3ms)
+Completed 200 OK in 172ms (Views: 158.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:02:43 +0900
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 21:02:43 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_inline_calendar.html.erb (0.4ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/index_post.html.erb within layouts/application (787.8ms)
+  Rendered shared/_routes.html.erb (4.0ms)
+Completed 200 OK in 1642ms (Views: 1533.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/diary/new_post" for 127.0.0.1 at 2018-11-03 21:02:45 +0900
+Processing by DiaryController#new_post as */*
+  Rendering diary/new_post.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/diary/_post_form.html.erb:2
+  Rendered diary/_post_form.html.erb (4.7ms)
+  Rendered diary/new_post.html.erb within layouts/application (97.2ms)
+  Rendered shared/_routes.html.erb (3.9ms)
+Completed 200 OK in 453ms (Views: 352.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/diary/create_post" for 127.0.0.1 at 2018-11-03 21:02:51 +0900
+Processing by DiaryController#create_post as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Al2lVlVG5XDwt+3/G0PvgzBL6oDtqE1r9iPfIgPAJvcjuI68smG5Ki/ULzDcNvqo2GTYkyJ0bVVDe3glJLiAwA==", "post"=>{"user_id"=>"1", "title"=>"text", "body"=>"ttt"}, "commit"=>"등록"}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `set_post_params' for PostsController:Class):
+  
+app/controllers/posts_controller.rb:14:in `create'
+app/controllers/diary_controller.rb:16:in `create_post'
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 21:04:07 +0900
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:04:07 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (1.0ms)
+  Rendered shared/_inline_calendar.html.erb (1.2ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/index_post.html.erb within layouts/application (361.9ms)
+  Rendered shared/_routes.html.erb (4.7ms)
+Completed 200 OK in 1034ms (Views: 793.3ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/diary/create_post" for 127.0.0.1 at 2018-11-03 21:04:12 +0900
+Processing by DiaryController#create_post as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Al2lVlVG5XDwt+3/G0PvgzBL6oDtqE1r9iPfIgPAJvcjuI68smG5Ki/ULzDcNvqo2GTYkyJ0bVVDe3glJLiAwA==", "post"=>{"user_id"=>"1", "title"=>"dfs", "body"=>"fff"}, "commit"=>"등록"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `set_post_params' for PostsController:Class):
+  
+app/controllers/posts_controller.rb:14:in `create'
+app/controllers/diary_controller.rb:16:in `create_post'
+Started PUT "/__web_console/repl_sessions/eabd13204ce2804a4f407e035713bf11" for 127.0.0.1 at 2018-11-03 21:04:20 +0900
+Started PUT "/__web_console/repl_sessions/eabd13204ce2804a4f407e035713bf11" for 127.0.0.1 at 2018-11-03 21:04:23 +0900
+Started PUT "/__web_console/repl_sessions/eabd13204ce2804a4f407e035713bf11" for 127.0.0.1 at 2018-11-03 21:04:26 +0900
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 21:05:01 +0900
+  
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:05:01 +0900
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_inline_calendar.html.erb (0.8ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/index_post.html.erb within layouts/application (312.7ms)
+  Rendered shared/_routes.html.erb (3.8ms)
+Completed 200 OK in 920ms (Views: 735.6ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/diary/create_post" for 127.0.0.1 at 2018-11-03 21:05:05 +0900
+Processing by DiaryController#create_post as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Al2lVlVG5XDwt+3/G0PvgzBL6oDtqE1r9iPfIgPAJvcjuI68smG5Ki/ULzDcNvqo2GTYkyJ0bVVDe3glJLiAwA==", "post"=>{"user_id"=>"1", "title"=>"sdf", "body"=>"fff"}, "commit"=>"등록"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/posts_controller.rb:14:in `create'
+app/controllers/diary_controller.rb:16:in `create_post'
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 21:07:57 +0900
+  
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:07:57 +0900
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (4.6ms)
+  Rendered shared/_inline_calendar.html.erb (0.6ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/index_post.html.erb within layouts/application (378.9ms)
+  Rendered shared/_routes.html.erb (12.8ms)
+Completed 200 OK in 1037ms (Views: 894.5ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/diary/create_post" for 127.0.0.1 at 2018-11-03 21:08:02 +0900
+Processing by DiaryController#create_post as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Al2lVlVG5XDwt+3/G0PvgzBL6oDtqE1r9iPfIgPAJvcjuI68smG5Ki/ULzDcNvqo2GTYkyJ0bVVDe3glJLiAwA==", "post"=>{"user_id"=>"1", "title"=>"k", "body"=>"kk"}, "commit"=>"등록"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_post_params' for PostsController:Class):
+  
+app/controllers/posts_controller.rb:14:in `create'
+app/controllers/diary_controller.rb:16:in `create_post'
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 21:08:55 +0900
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:08:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+  Rendering diary/index_post.html.erb within layouts/application
+Started POST "/diary/create_post" for 127.0.0.1 at 2018-11-03 21:08:58 +0900
+Processing by DiaryController#create_post as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Al2lVlVG5XDwt+3/G0PvgzBL6oDtqE1r9iPfIgPAJvcjuI68smG5Ki/ULzDcNvqo2GTYkyJ0bVVDe3glJLiAwA==", "post"=>{"user_id"=>"1", "title"=>"df", "body"=>"ff"}, "commit"=>"등록"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:15
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "df"], ["body", "ff"], ["created_at", "2018-11-03 12:08:58.473365"], ["updated_at", "2018-11-03 12:08:58.473365"]]
+  ↳ app/controllers/posts_controller.rb:15
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:15
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 3.8ms)
+
+
+  
+NameError (undefined local variable or method `posts_path' for PostsController:Class):
+  
+app/controllers/posts_controller.rb:17:in `create'
+app/controllers/diary_controller.rb:16:in `create_post'
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_inline_calendar.html.erb (1.1ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/_post_list.html.erb (2.1ms)
+  Rendered diary/index_post.html.erb within layouts/application (706.2ms)
+  Rendered shared/_routes.html.erb (5.3ms)
+Completed 200 OK in 1271ms (Views: 1096.2ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/diary/create_post" for 127.0.0.1 at 2018-11-03 21:09:36 +0900
+Processing by DiaryController#create_post as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Al2lVlVG5XDwt+3/G0PvgzBL6oDtqE1r9iPfIgPAJvcjuI68smG5Ki/ULzDcNvqo2GTYkyJ0bVVDe3glJLiAwA==", "post"=>{"user_id"=>"1", "title"=>"df", "body"=>"ff"}, "commit"=>"등록"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:15
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "df"], ["body", "ff"], ["created_at", "2018-11-03 12:09:37.610456"], ["updated_at", "2018-11-03 12:09:37.610456"]]
+  ↳ app/controllers/posts_controller.rb:15
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:15
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 9.8ms)
+
+
+  
+NoMethodError (undefined method `redirect_to' for PostsController:Class):
+  
+app/controllers/posts_controller.rb:17:in `create'
+app/controllers/diary_controller.rb:16:in `create_post'
+Started POST "/diary/create_post" for 127.0.0.1 at 2018-11-03 21:12:21 +0900
+Processing by DiaryController#create_post as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Al2lVlVG5XDwt+3/G0PvgzBL6oDtqE1r9iPfIgPAJvcjuI68smG5Ki/ULzDcNvqo2GTYkyJ0bVVDe3glJLiAwA==", "post"=>{"user_id"=>"1", "title"=>"df", "body"=>"ff"}, "commit"=>"등록"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:15
+  [1m[36mPost Create (5.0ms)[0m  [1m[32mINSERT INTO "posts" ("user_id", "title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["title", "df"], ["body", "ff"], ["created_at", "2018-11-03 12:12:22.471844"], ["updated_at", "2018-11-03 12:12:22.471844"]]
+  ↳ app/controllers/posts_controller.rb:15
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:15
+Redirected to http://localhost:3000/diary/index_post
+Completed 302 Found in 75ms (ActiveRecord: 23.2ms)
+
+
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:12:22 +0900
+Processing by DiaryController#index_post as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.8ms)
+  Rendered shared/_inline_calendar.html.erb (1.3ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/_post_list.html.erb (1.3ms)
+  Rendered diary/_post_list.html.erb (0.6ms)
+  Rendered diary/_post_list.html.erb (0.3ms)
+  Rendered diary/index_post.html.erb within layouts/application (40.8ms)
+  Rendered shared/_routes.html.erb (3.6ms)
+Completed 200 OK in 275ms (Views: 186.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:12:23 +0900
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 21:12:23 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_inline_calendar.html.erb (0.7ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/_post_list.html.erb (2.0ms)
+  Rendered diary/_post_list.html.erb (0.7ms)
+  Rendered diary/_post_list.html.erb (0.4ms)
+  Rendered diary/index_post.html.erb within layouts/application (631.2ms)
+  Rendered shared/_routes.html.erb (21.8ms)
+Completed 200 OK in 1387ms (Views: 1284.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/diary/show_post/1" for 127.0.0.1 at 2018-11-03 21:12:31 +0900
+Processing by DiaryController#show_post as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:36
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms)
+
+
+  
+NameError (undefined local variable or method `params' for PostsController:Class):
+  
+app/controllers/posts_controller.rb:28:in `show'
+app/controllers/diary_controller.rb:8:in `show_post'
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:14:02 +0900
+Processing by DiaryController#index_post as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_inline_calendar.html.erb (1.3ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/_post_list.html.erb (1.5ms)
+  Rendered diary/_post_list.html.erb (4.9ms)
+  Rendered diary/_post_list.html.erb (0.3ms)
+  Rendered diary/index_post.html.erb within layouts/application (71.8ms)
+  Rendered shared/_routes.html.erb (9.0ms)
+Completed 200 OK in 328ms (Views: 217.4ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:14:04 +0900
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 21:14:04 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_inline_calendar.html.erb (1.3ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/_post_list.html.erb (0.8ms)
+  Rendered diary/_post_list.html.erb (0.3ms)
+  Rendered diary/_post_list.html.erb (0.8ms)
+  Rendered diary/index_post.html.erb within layouts/application (760.6ms)
+  Rendered shared/_routes.html.erb (5.9ms)
+Completed 200 OK in 1729ms (Views: 1636.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/diary/show_post/1" for 127.0.0.1 at 2018-11-03 21:14:06 +0900
+Processing by DiaryController#show_post as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:36
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/before_controllers/posts_model.rb:12
+  Rendering diary/show_post.html.erb within layouts/application
+  Rendered shared/_navback.html.erb (0.5ms)
+  Rendered diary/show_post.html.erb within layouts/application (892.0ms)
+Completed 500 Internal Server Error in 1477ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_post_path' for #<#<Class:0x00007fc0a31a3b58>:0x00007fc09ee1f4e0>
+Did you mean?  edit_password_path):
+     6:   <div class="block">
+     7:     <%= simple_format @post.body %>
+     8:   </div>
+     9:   <%= link_to '수정', edit_post_path(@post) %>
+    10:   <%= link_to '삭제', post_path(@post), data: {confirm: "정말 삭제하시겠습니까?"}, method: :delete %>
+    11: </div>
+  
+app/views/diary/show_post.html.erb:9:in `_app_views_diary_show_post_html_erb__3048764834608801061_70232649296060'
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:15:44 +0900
+Processing by DiaryController#index_post as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.4ms)
+  Rendered shared/_inline_calendar.html.erb (0.5ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/_post_list.html.erb (1.1ms)
+  Rendered diary/_post_list.html.erb (1.0ms)
+  Rendered diary/_post_list.html.erb (0.2ms)
+  Rendered diary/index_post.html.erb within layouts/application (40.0ms)
+  Rendered shared/_routes.html.erb (5.2ms)
+Completed 200 OK in 169ms (Views: 157.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:15:45 +0900
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 21:15:45 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.7ms)
+  Rendered shared/_inline_calendar.html.erb (0.5ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/_post_list.html.erb (0.7ms)
+  Rendered diary/_post_list.html.erb (0.4ms)
+  Rendered diary/_post_list.html.erb (0.2ms)
+  Rendered diary/index_post.html.erb within layouts/application (603.8ms)
+  Rendered shared/_routes.html.erb (2.7ms)
+Completed 200 OK in 1026ms (Views: 937.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/diary/show_post/1" for 127.0.0.1 at 2018-11-03 21:16:50 +0900
+Processing by DiaryController#show_post as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:36
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/before_controllers/posts_model.rb:12
+  Rendering diary/show_post.html.erb within layouts/application
+  Rendered shared/_navback.html.erb (0.4ms)
+  Rendered diary/show_post.html.erb within layouts/application (58.2ms)
+  Rendered shared/_routes.html.erb (4.2ms)
+Completed 200 OK in 530ms (Views: 399.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/diary/destroy_post/1" for 127.0.0.1 at 2018-11-03 21:16:53 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/diary/destroy_post/1"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/diary/destroy_post/1" for 127.0.0.1 at 2018-11-03 21:16:54 +0900
+Processing by DiaryController#destroy_post as HTML
+  Parameters: {"authenticity_token"=>"n7lsor90EKInOlwM5oWGcIqmHHa9/+1ILEEulWuPuUkjUTSWWSeP4AxAnnSWcIH07zNzY7cpTJ79tY6AS06ptg==", "id"=>"1"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:36
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/before_controllers/posts_model.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/before_controllers/posts_model.rb:22
+  [1m[36mPost Destroy (2.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  ↳ app/before_controllers/posts_model.rb:22
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/before_controllers/posts_model.rb:22
+Redirected to http://localhost:3000/diary/index_post
+Completed 302 Found in 20ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:16:54 +0900
+Processing by DiaryController#index_post as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_inline_calendar.html.erb (0.5ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/_post_list.html.erb (1.1ms)
+  Rendered diary/_post_list.html.erb (0.3ms)
+  Rendered diary/index_post.html.erb within layouts/application (48.3ms)
+  Rendered shared/_routes.html.erb (13.3ms)
+Completed 200 OK in 289ms (Views: 271.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/diary/index_post" for 127.0.0.1 at 2018-11-03 21:16:55 +0900
+Processing by DiaryController#index_post as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:4
+Started GET "/dhr/js/framework7.min.js.map" for 127.0.0.1 at 2018-11-03 21:16:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/dhr/js/framework7.min.js.map"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+request_store (1.4.1) lib/request_store/middleware.rb:19:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering diary/index_post.html.erb within layouts/application
+  Rendered shared/_navbar.html.erb (0.6ms)
+  Rendered shared/_inline_calendar.html.erb (1.1ms)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/diary/index_post.html.erb:11
+  Rendered diary/_post_list.html.erb (2.7ms)
+  Rendered diary/_post_list.html.erb (0.5ms)
+  Rendered diary/index_post.html.erb within layouts/application (770.7ms)
+  Rendered shared/_routes.html.erb (5.3ms)
+Completed 200 OK in 1553ms (Views: 1439.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/diary/show_post/3" for 127.0.0.1 at 2018-11-03 21:17:36 +0900
+Processing by DiaryController#show_post as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/diary_controller.rb:36
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/before_controllers/posts_model.rb:12
+  Rendering diary/show_post.html.erb within layouts/application
+  Rendered shared/_navback.html.erb (1.4ms)
+  Rendered diary/show_post.html.erb within layouts/application (51.6ms)
+  Rendered shared/_routes.html.erb (14.2ms)
+Completed 200 OK in 339ms (Views: 260.8ms | ActiveRecord: 0.9ms)
+
+
