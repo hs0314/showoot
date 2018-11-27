@@ -4,8 +4,18 @@ class PostModel
     return Post.all
   end
 
-  def self.createPost
-    return Post.new
+  def self.createPost(params=nil)
+    if params == nil
+      return Post.new
+    else
+      post = Post.new
+      post.user_id = params[:user_id]
+      post.title = params[:title]
+      post.body = params[:body]
+      post.image = params[:image]
+      post.posted_at = params[:posted_at]
+      post.save
+    end
   end
 
   def self.getPost(id)

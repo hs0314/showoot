@@ -4,8 +4,17 @@ class CodiModel
     return Codi.all
   end
 
-  def self.createCodi
-    return Codi.new
+  def self.createCodi(params=nil)
+    if params==nil
+      return Codi.new
+    else
+      post = Codi.new
+      post.post_id = params[:post_id]
+      post.weather = params[:weather] if params[:weather] != false
+      post.event = params[:event]
+      post.preference = params[:preference]
+      post.save
+    end
   end
 
   def self.getCodi(id)

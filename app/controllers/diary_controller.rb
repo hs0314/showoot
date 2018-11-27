@@ -23,8 +23,6 @@ class DiaryController < ApplicationController
   def create_post
     #날씨정보 받아오기
     weather = get_current_weather
-    byebug
-
     #post params
     post_params = params[:post]
     post_id = PostsController.create(post_params)
@@ -42,10 +40,11 @@ class DiaryController < ApplicationController
 
   def edit_post
     PostsController.edit(@post)
+    @picked_date = @post.posted_at
   end
 
   def update_post
-    PostsController.update(@post)
+    PostsController.update(@post, params[:post])
     redirect_to '/#!/diary/index_post'
   end
 

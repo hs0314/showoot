@@ -11,13 +11,8 @@ class CodisController < ApplicationController
   end
 
   def self.create(params)
-    byebug
     post = Codi.new
-    post.post_id = params[:post_id]
-    post.weather = params[:weather] if params[:weather] != false
-    post.event = params[:event]
-    post.preference = params[:preference]
-    post.save
+    CodiModel.createCodi(params)
   end
 
   def self.edit(codi)

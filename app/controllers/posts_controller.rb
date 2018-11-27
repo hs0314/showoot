@@ -11,24 +11,16 @@ class PostsController < ApplicationController
   end
 
   def self.create(params)
-    byebug
-    post = Post.new
-    post.user_id = params[:user_id]
-    post.title = params[:title]
-    post.body = params[:body]
-    post.image = params[:image]
-    post.posted_at = params[:posted_at]
-    post.save
-
+    PostModel.createPost(params)
     return Post.last.id
   end
 
   def self.edit(post)
   end
 
-  def self.update(post)
+  def self.update(post, params)
     #@post.update_attributes(set_post_params)
-    PostModel.setPost(post.id, set_post_params)
+    PostModel.setPost(post.id, params)
 
   end
 
