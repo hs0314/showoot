@@ -16,7 +16,6 @@
     <link rel="icon" href="/img/f7-icon.png">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
   </head>
   <body>
     <div id="app">
@@ -30,6 +29,7 @@
     <script type="text/javascript" src="/dhr/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/dhr/js/framework7.min.js"></script>
     <%= render "shared/routes" %>
+    <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'app' %>
   </body>
 </html>

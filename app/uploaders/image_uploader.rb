@@ -1,4 +1,3 @@
-
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   def filename
@@ -25,4 +24,3 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [900,900]
   end
 end
-

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_05_072042) do
+ActiveRecord::Schema.define(version: 2018_11_24_073352) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -43,12 +43,69 @@ ActiveRecord::Schema.define(version: 2018_07_05_072042) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "cloths", force: :cascade do |t|
+    t.integer "codi_id"
+    t.integer "color"
+    t.integer "main_category"
+    t.integer "sub_category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["codi_id"], name: "index_cloths_on_codi_id"
+  end
+
+  create_table "codis", force: :cascade do |t|
+    t.integer "post_id"
+    t.json "weather"
+    t.string "event"
+    t.integer "preference"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_codis_on_post_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "faqs", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["position"], name: "index_faqs_on_position"
+  end
+
+  create_table "intros", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "image"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["position"], name: "index_intros_on_position"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.string "name"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_pages_on_name"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -58,7 +115,40 @@ ActiveRecord::Schema.define(version: 2018_07_05_072042) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "open_range"
+    t.integer "like_count"
+    t.date "posted_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "recommands", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "feedback"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_recommands_on_user_id"
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string "title"
+    t.string "name"
+    t.text "body"
+    t.string "image"
+    t.string "url"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_settings_on_name"
+    t.index ["position"], name: "index_settings_on_position"
+  end
+
+  create_table "user_posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_user_posts_on_post_id"
+    t.index ["user_id"], name: "index_user_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

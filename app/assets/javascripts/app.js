@@ -6,18 +6,12 @@ var app = new Framework7({
   root: '#app',
   theme: 'md',
   init: false,
+  cacheDuration: 0,
+  cache: false,
   view: {
     // 여러 페이지를 캐시해서 뒤로가기가 여러 depth에서도 동작하게 하려면 필요한 옵션
     stackPages: true,
     pushState: true
-  },
-  toast: {
-    closeTimeout: 3000,
-    closeButton: true,
-  },
-  notification: {
-    title: 'My App',
-    closeTimeout: 3000,
   },
   routes: routes,
 });
@@ -29,7 +23,7 @@ function customizingCalendar(){
   var calendarInline = app.calendar.create({
     containerEl: '#demo-calendar-inline-container',
     value: [today],
-    weekHeader: false,
+    weekHeader: true,
     renderToolbar: function () {
       return '<div class="toolbar calendar-custom-toolbar no-shadow">' +
         '<div class="toolbar-inner">' +
@@ -55,13 +49,43 @@ function customizingCalendar(){
       },
       monthYearChangeStart: function (c) {
         $$('.calendar-custom-toolbar .center').text(monthNames[c.currentMonth] +', ' + c.currentYear);
+      },
+      dayClick: function(calendar, dayEl, year, month, day){
+        var date = year + "-" + (parseInt(month)+1) + "-" + day;
+        //app.router.navigate('/diary/pick_date?date=' + date);
+        // app.request.get('/diary/pick_date.js',{ picked_date:date, }, function (data) {
+        //
+        // });
+        $('#new_post').attr("href", "/diary/new_post?picked_date=" + date)
+        $.ajax({
+          type: 'GET',
+          url: '/diary/pick_date',
+          data: { picked_date: date },
+          dataType : 'script'
+        });
       }
     }
   });
 }
 
-$$(document).on("page:init", ".page[data-name='posts-index']", function() {
+$$(document).on("page:init", ".page[data-name='home-index']", function() {
+});
+$$(document).on("page:init", ".page[data-name='diary-index_post']", function() {
   customizingCalendar();
+});
+$$(document).on("page:init", ".page[data-name='diary-new_post']", function() {
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+         $('#image_upload').attr('src', e.target.result);
+       };
+       reader.readAsDataURL(input.files[0]);
+     }
+   }
+   $('input').on('change', function(){
+     readURL(this);
+   });
 });
 
 app.init();

@@ -1,16 +1,43 @@
-<%= render 'shared/navbar' %>
+<div class="navbar no-shadow">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="link back">
+        <i class="icon icon-back"></i>
+        <span class="ios-only">Back</span>
+      </a>
+    </div>
+    <div class="title"></div>
+    <div class="right">
+      <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
+        <i class="icon f7-icons ios-only">search_strong</i>
+        <i class="icon material-icons md-only">search</i>
+      </a>
+    </div>
+    <form data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+      <div class="searchbar-inner">
+        <div class="searchbar-input-wrap">
+          <input type="search" placeholder="키워드를 검색하세요"/>
+          <i class="searchbar-icon"></i>
+          <span class="input-clear-button"></span>
+        </div>
+        <span class="searchbar-disable-button">Cancel</span>
+      </div>
+    </form>
+  </div>
+</div>
 
 <div class="page-content">
+  <div class="fab fab-extended fab-right-bottom color-blue">
+    <%= link_to new_post_path(picked_date: @picked_date), id: "new_post" do %>
+      <i class="icon f7-icons ios-only">add</i>
+      <i class="icon material-icons md-only">add</i>
+    <% end %>
+  </div>
   <%= render 'shared/inline_calendar' %>
-
   <div class="block">
-  <div class="block-title">포스트</div>
-  <%= link_to '새 글 작성', '/diary/new_post' %>
-  <div class="list media-list">
-    <ul>
-      <% @my_posts.each do |post| %>
-        <%= render 'post_list', post: post %>
-      <% end %>
-    </ul>
+    <div class="block-title">포스트</div>
+    <div class="list media-list" id="post_div">
+      <%= render 'post_list', target_posts: @target_posts %>
+    </div>
   </div>
 </div>
