@@ -17,6 +17,10 @@
       <%= form_for @post, url: '/diary/create_post' do |f| %>
         <%= f.hidden_field :user_id,value: current_user.id %>
         <%= f.hidden_field :posted_at,value: @picked_date %>
+
+        <!-- 옷 정보 -->
+        <%= hidden_field_tag :clothes_info, value: "" %>
+
         <% if @post.errors.any? %>
           <div id="errorExplanation">
             <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -69,9 +73,123 @@
               </div>
             </div>
           </li>
+          <div class="list links-list" style="margin:0 auto;" >
+            <ul style="padding-left:0px;">
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-input-wrap">
+                    <a class="link popup-open" style="padding-left:0px;" href="#" data-popup=".popup-about">Category</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="popup popup-about">
+            <div class="block">
+              <a class="button button-fill color-blue link popup-close" id="category_select_btn" href="#">선택완료</a>
+              <div class="block-title">Category</div>
+              <div class="list accordion-list">
+                <ul>
+                  <li class="accordion-item">
+                    <a href="#" class="item-content item-link">
+                      <div class="item-inner">
+                        <div class="item-title">원피스</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <div class="list">
+                          <ul>
+                            <li>
+                              <label class="item-radio item-content">
+                                <input type="radio" name="demo-radio" value="원피스_롱" /> <!-- checked="checked"/> -->
+                                <i class="icon icon-radio"></i>
+                                <div class="item-inner">
+                                  <div class="item-title">롱</div>
+                                </div>
+                              </label>
+                            </li>
+                            <li>
+                              <label class="item-radio item-content">
+                                <input type="radio" name="demo-radio" value="원피스_미니"/>
+                                <i class="icon icon-radio"></i>
+                                <div class="item-inner">
+                                  <div class="item-title">미니</div>
+                                </div>
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a href="#" class="item-content item-link">
+                      <div class="item-inner">
+                        <div class="item-title">아우터</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a href="#" class="item-content item-link">
+                      <div class="item-inner">
+                        <div class="item-title">상의</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a href="#" class="item-content item-link">
+                      <div class="item-inner">
+                        <div class="item-title">셔츠/블라우스</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a href="#" class="item-content item-link">
+                      <div class="item-inner">
+                        <div class="item-title">하의</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="accordion-item">
+                    <a href="#" class="item-content item-link">
+                      <div class="item-inner">
+                        <div class="item-title">점프수트</div>
+                      </div>
+                    </a>
+                    <div class="accordion-item-content">
+                      <div class="block">
+                        <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <li class="item-content item-input">
             <div class="item-inner">
-              <div class="item-title item-label">선호 점수</div>
+              <div class="item-title item-label">Preference</div>
               <div class="item-input-wrap">
                 <div class="range-slider range-slider-init" data-label="true">
                   <input type="range" name="preference" value="5" min="1" max="5" step="1">

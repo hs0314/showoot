@@ -1,34 +1,32 @@
 class CodisController < ApplicationController
-  #before_action :set_post, except: [:index, :new, :create]
 
   def self.index(current_user)
-    codis = CodiModel.getAllPosts
+    codis = CodiModel.getAllCodi
     return codis.where(user_id: current_user.id)
   end
 
   def self.new_p
-    return CodiModel.createPost
+    return CodiModel.createCodi
   end
 
   def self.create(params)
-    post = Codi.new
     CodiModel.createCodi(params)
+    return Codi.last.id
   end
 
   def self.edit(codi)
   end
 
   def self.update(codi)
-    #@post.update_attributes(set_post_params)
     CodiModel.setCodi(codi.id, set_codi_params)
 
   end
 
-  def self.show(post)
-    post = CodiModel.getCodi(codi.id)
+  def self.show(codi)
+    codi = CodiModel.getCodi(codi.id)
   end
 
-  def self.destroy(post)
+  def self.destroy(codi)
     CodiModel.destroyCodi(codi.id)
   end
 

@@ -1,5 +1,5 @@
 class DiaryController < ApplicationController
-  before_action :set_pots, except: [:pick_date, :index_post, :new_post, :create_post]
+  before_action :set_post, except: [:pick_date, :index_post, :new_post, :create_post]
 
   def index_post
     if params[:picked_date].present?
@@ -23,6 +23,7 @@ class DiaryController < ApplicationController
   def create_post
     #날씨정보 받아오기
     weather = get_current_weather
+
     #post params
     post_params = params[:post]
     post_id = PostsController.create(post_params)
@@ -33,7 +34,20 @@ class DiaryController < ApplicationController
     codi_params.merge!(weather: weather)
     codi_params.merge!(event: params[:event])
     codi_params.merge!(preference: params[:preference])
-    CodisController.create(codi_params)
+    codi_id = CodisController.create(codi_params)
+
+    #clothes params
+    clothes_info = JSON.parse(params["clothes_info"])
+    clothes_info.each do |cloth_info|
+      cloth_params = {}
+      byebug
+      cloth_params.merge!(codi_id: codi_id)
+      cloth_params.merge!(main_category: cloth_info["main"])
+      cloth_params.merge!(sub_category: cloth_info["sub"])
+      cloth_params.merge!(color: cloth_info["color"])
+
+      ClothesController.create(cloth_params)
+    end
 
     redirect_to '/#!/diary/index_post'
   end

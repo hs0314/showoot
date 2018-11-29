@@ -8,12 +8,12 @@ class CodiModel
     if params==nil
       return Codi.new
     else
-      post = Codi.new
-      post.post_id = params[:post_id]
-      post.weather = params[:weather] if params[:weather] != false
-      post.event = params[:event]
-      post.preference = params[:preference]
-      post.save
+      codi = Codi.new
+      codi.post_id = params[:post_id]
+      codi.weather = params[:weather] if params[:weather] != false
+      codi.event = params[:event]
+      codi.preference = params[:preference]
+      codi.save
     end
   end
 

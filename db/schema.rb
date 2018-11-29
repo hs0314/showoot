@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 2018_11_24_073352) do
 
   create_table "cloths", force: :cascade do |t|
     t.integer "codi_id"
-    t.integer "color"
-    t.integer "main_category"
-    t.integer "sub_category"
+    t.string "color"
+    t.string "main_category"
+    t.string "sub_category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["codi_id"], name: "index_cloths_on_codi_id"

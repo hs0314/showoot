@@ -74,6 +74,11 @@ $$(document).on("page:init", ".page[data-name='diary-index_post']", function() {
   customizingCalendar();
 });
 $$(document).on("page:init", ".page[data-name='diary-new_post']", function() {
+  var clothesInfo = [];
+  var clothInfo = {};
+  var selected_cloth;
+  var selected_color;
+
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -83,9 +88,63 @@ $$(document).on("page:init", ".page[data-name='diary-new_post']", function() {
        reader.readAsDataURL(input.files[0]);
      }
    }
+   // Create dynamic Popover
+    var dynamicPopover = app.popover.create({
+      targetEl: 'a.dynamic-popover',
+      content: '<div class="popover">'+
+                  '<div class="popover-inner">'+
+                    '<div class="block">'+
+                      '<p>Choose color</p>'+
+                      '<p><a href="#" id="color" class="link popover-close">Red</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">Green</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">Blue</a></p>'+
+                    '</div>'+
+                  '</div>'+
+                '</div>',
+      // Events
+      on: {
+        open: function (popover) {
+          console.log(popover);
+        },
+        opened: function (popover) {
+          //색깔 정해서 rails hidden_field에 value 넣기
+          var elements = document.getElementsByClassName('popover-close');
+          for (var i = 0, len = elements.length; i < len; i++) {
+            elements[i].addEventListener("click", function(e) {
+              console.log(e.target.innerText);
+              selected_color = e.target.innerText;
+            });
+          }
+          // $('#color').on('click', function(e){
+          //   console.log(e.target.innerText);
+          //   selected_color = e.target.innerText;
+          // });
+        },
+        closed: function(popover){
+          cloth_info = {main: selected_cloth.split("_")[0] ,sub: selected_cloth.split("_")[1], color: selected_color };
+          clothesInfo.push( cloth_info );
+        }
+      }
+    });
+
    $('input').on('change', function(){
      readURL(this);
    });
+
+   $('#category_select_btn').on('click', function(){
+     //console.log(clothesInfo);
+     //여기서 hidden_field에 옷 정보 넘겨주기
+     document.getElementById('clothes_info').value = JSON.stringify(clothesInfo);
+
+     console.log(document.getElementById('clothes_info').value);
+   });
+
+   $$('input[type="radio"]').on('change click', function(ev){
+    selected_cloth = $$(ev.currentTarget).val();
+     console.log(selected_cloth);
+     dynamicPopover.open();
+   });
+
 });
 
 app.init();
