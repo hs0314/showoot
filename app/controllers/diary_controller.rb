@@ -1,6 +1,8 @@
 class DiaryController < ApplicationController
   before_action :set_post, except: [:pick_date, :index_post, :new_post, :create_post]
 
+  
+
   def index_post
     if params[:picked_date].present?
       @picked_date = params[:picked_date]

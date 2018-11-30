@@ -32,4 +32,9 @@ class PostsController < ApplicationController
     PostModel.destroyPost(post.id)
   end
 
+  def self.search_by(search_term)
+    PostModel.search_by(search_term)
+  end
+
+
 end
