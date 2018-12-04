@@ -35,6 +35,4 @@ class PostsController < ApplicationController
   def self.search_by(search_term)
     PostModel.search_by(search_term)
   end
-
-
 end

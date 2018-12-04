@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/diary/edit_post/:id' => 'diary#edit_post'
   post '/diary/update_post/:id' => 'diary#update_post'
   delete '/diary/destroy_post/:id' => 'diary#destroy_post'
+
   get '/search/search' => 'search#search', as: 'search'
   get '/search/result' => 'search#result', as: 'result'
 

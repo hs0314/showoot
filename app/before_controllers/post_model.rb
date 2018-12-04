@@ -32,11 +32,4 @@ class PostModel
     post.destroy
   end
 
-  def self.search_by(search_term)
-    string = "%#{search_term}%"
-    post = Post.where("title LIKE ? OR body LIKE ?",string,string)
-    #byebug
-    return post
-  end
-
 end
