@@ -68,8 +68,6 @@ function customizingCalendar(){
   });
 }
 
-$$(document).on("page:init", ".page[data-name='home-index']", function() {
-});
 $$(document).on("page:init", ".page[data-name='diary-index_post']", function() {
   customizingCalendar();
 });
@@ -135,7 +133,6 @@ $$(document).on("page:init", ".page[data-name='diary-new_post']", function() {
      //console.log(clothesInfo);
      //여기서 hidden_field에 옷 정보 넘겨주기
      document.getElementById('clothes_info').value = JSON.stringify(clothesInfo);
-
      console.log(document.getElementById('clothes_info').value);
    });
 
@@ -144,7 +141,42 @@ $$(document).on("page:init", ".page[data-name='diary-new_post']", function() {
      console.log(selected_cloth);
      dynamicPopover.open();
    });
+});
+$$(document).on("page:init", ".page[data-name='mypage-index']", function() {
+  var allowInfinite = true;
+  var lastItemIndex = $$('.list li').length; //card-container의 자식 개수
+  var maxItems = 200;
+  var itemsPerLoad = 20;
 
+  $$('.infinite-scroll-content').on('infinite', function () {
+    if (!allowInfinite) return;
+    // Set loading flag
+    allowInfinite = false;
+
+    // Emulate 1s loading
+    setTimeout(function () {
+      // Reset loading flag
+      allowInfinite = true;
+
+      //다 로드한 경우
+      if (lastItemIndex >= maxItems){
+        app.infiniteScroll.destroy('.infinite-scroll-content');
+        $$('.infinite-scroll-preloader').remove();
+        return;
+      }
+
+      // Generate new items HTML
+      var html = '';
+      for (var i = lastItemIndex + 1; i <= lastItemIndex + itemsPerLoad; i++) {
+        html += '<li>Item ' + i + '</li>'; // 여기에 div id잡아서 가져오기
+      }
+      // Append new items
+      $$('.list ul').append(html);
+
+      // Update last loaded index
+      lastItemIndex = $$('.list li').length;
+    }, 1000);
+  });
 });
 
 app.init();

@@ -14,11 +14,14 @@ Rails.application.routes.draw do
   post '/diary/edit_post/:id' => 'diary#edit_post'
   post '/diary/update_post/:id' => 'diary#update_post'
   delete '/diary/destroy_post/:id' => 'diary#destroy_post'
-
   ##ajax action
   get '/diary/pick_date' => 'diary#pick_date'
 
 
+  #my page
+  get '/mypage/index' => 'mypage#index', as: 'index_mypage'
+
+  #lookbook
 
   root 'home#index'
 end
