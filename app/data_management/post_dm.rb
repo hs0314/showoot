@@ -1,4 +1,4 @@
-class PostModel
+class PostDm
   # 전체 포스트 가져오기
   def self.getAllPosts
     return Post.all

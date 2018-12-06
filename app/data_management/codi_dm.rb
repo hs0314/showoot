@@ -1,4 +1,4 @@
-class CodiModel
+class CodiDm
   # 전체 포스트 가져오기
   def self.getAllCodis
     return Codi.all
