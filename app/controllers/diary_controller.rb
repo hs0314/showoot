@@ -7,16 +7,16 @@ class DiaryController < ApplicationController
     else
       @picked_date = Date.today.strftime('%Y-%m-%d')
     end
-    my_posts = PostsController.index(current_user)
+    my_posts = Post.index(current_user)
     @target_posts = my_posts.where(posted_at: @picked_date)
   end
 
   def show_post
-    PostsController.show(@post)
+    Post.show_post(@post)
   end
 
   def new_post
-    @post = PostsController.new_p
+    @post = Post.new_post
     @picked_date = params[:picked_date]
   end
 
@@ -26,7 +26,7 @@ class DiaryController < ApplicationController
 
     #post params
     post_params = params[:post]
-    post_id = PostsController.create(post_params)
+    post_id = Post.create_post(post_params)
 
     #codi params
     codi_params = {}
@@ -34,7 +34,7 @@ class DiaryController < ApplicationController
     codi_params.merge!(weather: weather)
     codi_params.merge!(event: params[:event])
     codi_params.merge!(preference: params[:preference])
-    codi_id = CodisController.create(codi_params)
+    codi_id = Codi.create_codi(codi_params)
 
     #clothes params
     clothes_info = JSON.parse(params["clothes_info"])
@@ -46,30 +46,30 @@ class DiaryController < ApplicationController
       cloth_params.merge!(sub_category: cloth_info["sub"])
       cloth_params.merge!(color: cloth_info["color"])
 
-      ClothesController.create(cloth_params)
+      Cloth.create_cloth(cloth_params)
     end
 
     redirect_to '/#!/diary/index_post'
   end
 
   def edit_post
-    PostsController.edit(@post)
+    Post.edit_post(@post)
     @picked_date = @post.posted_at
   end
 
   def update_post
-    PostsController.update(@post, params[:post])
+    Post.update_post(@post, params[:post])
     redirect_to '/#!/diary/index_post'
   end
 
   def destroy_post
-    PostsController.destroy(@post)
+    Post.destroy_post(@post)
     redirect_to '/#!/diary/index_post'
   end
 
   def pick_date
     @picked_date = params[:picked_date]
-    my_posts = PostsController.index(current_user)
+    my_posts = Post.index(current_user)
     @target_posts = my_posts.where(posted_at: @picked_date)
     #redirect_to index_posts_path(picked_date: @picked_date)
     respond_to do |format|
