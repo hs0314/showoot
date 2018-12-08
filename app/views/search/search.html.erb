@@ -1,0 +1,18 @@
+<div class="navbar no-shadow">
+  <div class="navbar-inner sliding">
+    <div class="left">
+      <a href="#" class="link back">
+        <i class="icon icon-back"></i>
+        <span class="ios-only">Back</span>
+      </a>
+    </div>
+    <div class="title">검색</div>
+  </div>
+</div>
+
+<div class="age-content">
+  <h2><strong>검색</strong></h2><br>
+  <%= form_for "",url: result_path, role:"search", method: :get do %>
+    <%= text_field_tag :search, @search_term,placeholder: "Search"%>
+  <% end %>
+</div>

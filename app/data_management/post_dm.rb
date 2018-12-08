@@ -31,4 +31,5 @@ class PostDm
     post = Post.find(id)
     post.destroy
   end
+
 end

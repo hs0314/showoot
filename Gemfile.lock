@@ -141,6 +141,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    csv (3.0.0)
     devise (4.4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -428,6 +429,7 @@ DEPENDENCIES
   carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
+  csv
   devise
   devise-i18n
   exception_notification
@@ -465,7 +467,7 @@ DEPENDENCIES
   webshot
 
 RUBY VERSION
-   ruby 2.4.2p198
+   ruby 2.4.3p205
 
 BUNDLED WITH
-   1.16.2
+   1.16.5
