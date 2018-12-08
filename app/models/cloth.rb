@@ -1,9 +1,13 @@
 class Cloth < ApplicationRecord
   belongs_to :codi
 
-  def self.index(current_user)
+  def self.index(current_user=nil)
     clothes = ClothDm.getAllClothes
-    return clothes.where(user_id: current_user.id)
+    if current_user == nil
+      return clothes
+    else
+      return clothes.where(user_id: current_user.id)
+    end
   end
 
   def self.new_cloth

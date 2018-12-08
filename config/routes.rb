@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   #my page
   get '/mypage/index' => 'mypage#index', as: 'index_mypage'
+  get '/mypage/category' => 'mypage#category', as: 'category'
 
   #lookbook
 

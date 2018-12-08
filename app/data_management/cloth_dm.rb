@@ -8,7 +8,6 @@ class ClothDm
     if params==nil
       return Cloth.new
     else
-      byebug
       cloth = Cloth.new
       cloth.codi_id = params[:codi_id]
       cloth.main_category = params[:main_category]
