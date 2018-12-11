@@ -3,10 +3,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
 
-  #resources :posts
-
   #diary
-  ##views
   get '/diary/index_post' => 'diary#index_post', as: 'index_posts'
   get '/diary/new_post' => 'diary#new_post', as: 'new_post'
   get '/diary/show_post/:id' => 'diary#show_post'
@@ -14,14 +11,10 @@ Rails.application.routes.draw do
   post '/diary/edit_post/:id' => 'diary#edit_post'
   post '/diary/update_post/:id' => 'diary#update_post'
   delete '/diary/destroy_post/:id' => 'diary#destroy_post'
-
-  get '/search/search' => 'search#search', as: 'search'
-  get '/search/result' => 'search#result', as: 'result'
-
-
-
-  ##ajax action
   get '/diary/pick_date' => 'diary#pick_date'
+
+  #search
+  get 'diary/search' => 'search#result', as: 'diary_search'
 
 
   #my page
@@ -29,6 +22,7 @@ Rails.application.routes.draw do
   get '/mypage/category' => 'mypage#category', as: 'category'
 
   #lookbook
+  get '/lookbook/index' => 'lookbook#index', as: 'index_lookbook'
 
   root 'home#index'
 end

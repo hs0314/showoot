@@ -8,21 +8,23 @@
     </div>
     <div class="title"></div>
     <div class="right">
-      <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
+      <!-- <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
         <i class="icon f7-icons ios-only">search_strong</i>
         <i class="icon material-icons md-only">search</i>
-      </a>
+      </a> -->
     </div>
-    <form data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+    <%# form_for "",url: result_path, role:"search", method: :get, class: "searchbar searchbar-expandable searchbar-components searchbar-init" do %>
+    <!-- <form data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-components searchbar-init">
       <div class="searchbar-inner">
         <div class="searchbar-input-wrap">
           <input type="search" placeholder="키워드를 검색하세요"/>
           <i class="searchbar-icon"></i>
-          <span class="input-clear-button"></span>
+           <span class="input-clear-button"></span>
         </div>
         <span class="searchbar-disable-button">Cancel</span>
+        <input type="submit">
       </div>
-    </form>
+    </form> -->
   </div>
 </div>
 
@@ -33,6 +35,21 @@
       <i class="icon material-icons md-only">add</i>
     <% end %>
   </div>
+  <div class="list inline-labels no-hairlines-md">
+    <ul>
+      <%= form_for "",url: diary_search_path, method: :get do %>
+      <li class="item-content item-input">
+        <div class="item-inner">
+          <div class="item-input-wrap">
+            <%= text_field_tag :search, @search_term, placeholder:"키워드를 검색하세요" %>
+            <span class="input-clear-button"></span>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
   <%= render 'shared/inline_calendar' %>
   <div class="block">
     <div class="block-title">포스트</div>
