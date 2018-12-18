@@ -89,13 +89,26 @@ $$(document).on("page:init", ".page[data-name='diary-new_post']", function() {
    // Create dynamic Popover
     var dynamicPopover = app.popover.create({
       targetEl: 'a.dynamic-popover',
-      content: '<div class="popover">'+
+      content: '<div class="popover" style="margin:0 auto;">'+
                   '<div class="popover-inner">'+
                     '<div class="block">'+
-                      '<p>Choose color</p>'+
-                      '<p><a href="#" id="color" class="link popover-close">Red</a></p>'+
-                      '<p><a href="#" id="color" class="link popover-close">Green</a></p>'+
-                      '<p><a href="#" id="color" class="link popover-close">Blue</a></p>'+
+                      '<p>색깔을 선택해주세요</p>'+
+                      '<p><a href="#" id="color" class="link popover-close">빨강</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">노랑</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">녹색</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">파랑</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">보라</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">주황</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">연두</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">청록</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">군청</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">자주</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">흰색</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">회색</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">검정</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">분홍</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">하늘</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">브라운</a></p>'+
                     '</div>'+
                   '</div>'+
                 '</div>',

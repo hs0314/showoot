@@ -90,99 +90,34 @@
               <div class="block-title">Category</div>
               <div class="list accordion-list">
                 <ul>
-                  <li class="accordion-item">
-                    <a href="#" class="item-content item-link">
-                      <div class="item-inner">
-                        <div class="item-title">원피스</div>
-                      </div>
-                    </a>
-                    <div class="accordion-item-content">
-                      <div class="block">
-                        <div class="list">
-                          <ul>
-                            <li>
-                              <label class="item-radio item-content">
-                                <input type="radio" name="demo-radio" value="원피스_롱" /> <!-- checked="checked"/> -->
-                                <i class="icon icon-radio"></i>
-                                <div class="item-inner">
-                                  <div class="item-title">롱</div>
-                                </div>
-                              </label>
-                            </li>
-                            <li>
-                              <label class="item-radio item-content">
-                                <input type="radio" name="demo-radio" value="원피스_미니"/>
-                                <i class="icon icon-radio"></i>
-                                <div class="item-inner">
-                                  <div class="item-title">미니</div>
-                                </div>
-                              </label>
-                            </li>
-                          </ul>
+                  <% Cloth.get_clothes_info.each do |key, value| %>
+                    <li class="accordion-item">
+                      <a href="#" class="item-content item-link">
+                        <div class="item-inner">
+                          <div class="item-title"><%= key %></div>
+                        </div>
+                      </a>
+                      <div class="accordion-item-content">
+                        <div class="block">
+                          <div class="list">
+                            <ul>
+                              <% value.each do |cloth_name| %>
+                                <li>
+                                  <label class="item-radio item-content">
+                                    <input type="radio" name="demo-radio" value="<%= key %>_<%= cloth_name %>" /> <!-- checked="checked"/> -->
+                                    <i class="icon icon-radio"></i>
+                                    <div class="item-inner">
+                                      <div class="item-title"><%= cloth_name %></div>
+                                    </div>
+                                  </label>
+                                </li>
+                              <% end %>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </li>
-                  <li class="accordion-item">
-                    <a href="#" class="item-content item-link">
-                      <div class="item-inner">
-                        <div class="item-title">아우터</div>
-                      </div>
-                    </a>
-                    <div class="accordion-item-content">
-                      <div class="block">
-                        <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="accordion-item">
-                    <a href="#" class="item-content item-link">
-                      <div class="item-inner">
-                        <div class="item-title">상의</div>
-                      </div>
-                    </a>
-                    <div class="accordion-item-content">
-                      <div class="block">
-                        <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="accordion-item">
-                    <a href="#" class="item-content item-link">
-                      <div class="item-inner">
-                        <div class="item-title">셔츠/블라우스</div>
-                      </div>
-                    </a>
-                    <div class="accordion-item-content">
-                      <div class="block">
-                        <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="accordion-item">
-                    <a href="#" class="item-content item-link">
-                      <div class="item-inner">
-                        <div class="item-title">하의</div>
-                      </div>
-                    </a>
-                    <div class="accordion-item-content">
-                      <div class="block">
-                        <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="accordion-item">
-                    <a href="#" class="item-content item-link">
-                      <div class="item-inner">
-                        <div class="item-title">점프수트</div>
-                      </div>
-                    </a>
-                    <div class="accordion-item-content">
-                      <div class="block">
-                        <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
-                      </div>
-                    </div>
-                  </li>
+                    </li>
+                  <% end %>
                 </ul>
               </div>
             </div>

@@ -41,7 +41,6 @@ class DiaryController < ApplicationController
     clothes_info = JSON.parse(params['clothes_info'])
     clothes_info.each do |cloth_info|
       cloth_params = {}
-      byebug
       cloth_params[:codi_id] = codi_id
       cloth_params[:main_category] = cloth_info['main']
       cloth_params[:sub_category] = cloth_info['sub']
@@ -79,6 +78,17 @@ class DiaryController < ApplicationController
   end
 
   private
+
+  def global_var
+    if params[:picked_date].present?
+      @picked_date = params[:picked_date]
+    else
+      @picked_date = Date.today.strftime('%Y-%m-%d')
+    end
+
+    @my_posts = Post.index(current_user)
+    @target_posts = @my_posts.where(posted_at: @picked_date)
+  end
 
   def set_post
     @post = Post.find(params[:id])

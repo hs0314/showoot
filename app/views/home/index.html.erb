@@ -21,5 +21,8 @@
     <div class="block-title">
       <%= link_to '룩북/타임라인 조회', index_lookbook_path %>
     </div>
+    <% if user_signed_in? %>
+      <%= link_to "로그아웃", destroy_user_session_path, method: :delete %>
+    <% end %>
   </div>
 </div>
