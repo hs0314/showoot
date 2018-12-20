@@ -68,6 +68,9 @@ function customizingCalendar(){
   });
 }
 
+$$(document).on("page:init", ".page[data-name='home-index']", function() {
+  customizingCalendar();
+});
 $$(document).on("page:init", ".page[data-name='diary-index_post']", function() {
   customizingCalendar();
 });

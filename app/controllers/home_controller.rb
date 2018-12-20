@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     else
       @picked_date = Date.today.strftime('%Y-%m-%d')
     end
-    my_posts = Post.index(current_user)
-    @target_posts = my_posts.where(posted_at: @picked_date.to_date)
+    @my_posts = Post.index(current_user)
+    @target_posts = @my_posts.where(posted_at: @picked_date)
   end
 end
