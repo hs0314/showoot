@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #diary
   get '/diary/index_post' => 'diary#index_post', as: 'index_posts'
   get '/diary/new_post' => 'diary#new_post', as: 'new_post'
-  get '/diary/show_post/:id' => 'diary#show_post'
+  get '/diary/show_post/:id' => 'diary#show_post', as: 'show_post'
   post '/diary/create_post' => 'diary#create_post'
   post '/diary/edit_post/:id' => 'diary#edit_post'
   post '/diary/update_post/:id' => 'diary#update_post'
