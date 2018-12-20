@@ -1,5 +1,5 @@
 <div class="block">
-  <div class="block-title"><%= picked_date %> 포스트 작성</div>
+  <div class="block-title"><%= picked_date.strftime("%Y년 %m월 %d일") %> OOTD 다이어리 작성</div>
   <div class="list inline-labels no-hairlines-md">
     <%= form_for @post, url: '/diary/create_post' do |f| %>
       <%= f.hidden_field :user_id,value: current_user.id %>
@@ -36,7 +36,7 @@
             <div class="item-input-wrap">
               <img id="image_upload" src="#" />
               <!-- <input type='file' onchange="readURL(this);" /> -->
-              <%= f.file_field :image %>
+              <%= f.file_field :image %> <!--name => post[image] -->
             </div>
           </div>
         </li>
