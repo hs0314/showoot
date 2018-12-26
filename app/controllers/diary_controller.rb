@@ -49,7 +49,7 @@ class DiaryController < ApplicationController
       Cloth.create_cloth(cloth_params)
     end
 
-    redirect_to '/#!/diary/index_post'
+    redirect_to root_path
   end
 
   def edit_post

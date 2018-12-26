@@ -23,6 +23,13 @@ function customizingCalendar(){
   var calendarInline = app.calendar.create({
     containerEl: '#demo-calendar-inline-container',
     value: [today],
+    events: [
+      new Date(2018, 11, 1),
+      new Date(2018, 11, 5),
+      new Date(2018, 11, 8),
+      new Date(2018, 11, 11),
+      new Date(2018, 11, 20)
+    ],
     weekHeader: true,
     renderToolbar: function () {
       return '<div class="toolbar calendar-custom-toolbar no-shadow">' +

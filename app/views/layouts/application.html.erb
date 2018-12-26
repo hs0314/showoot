@@ -18,12 +18,9 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
-    <div id="app">
-      <div class="statusbar"></div>
-      <div class="view view-main view-init" data-url="/">
-        <div class="page" data-name="<%= "#{controller_name}-#{action_name}" %>">
-          <%= yield %>
-        </div>
+    <div class="view view-main view-init" data-url="/">
+      <div class="page" data-name="<%= "#{controller_name}-#{action_name}" %>">
+        <%= yield %>
       </div>
     </div>
     <script type="text/javascript" src="/dhr/js/jquery-3.3.1.min.js"></script>

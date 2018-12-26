@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   #lookbook
   get '/lookbook/index' => 'lookbook#index', as: 'index_lookbook'
+  get '/lookbook/like/:id' => 'lookbook#likes', as: 'like_lookbook'
 
   root 'home#index'
 end

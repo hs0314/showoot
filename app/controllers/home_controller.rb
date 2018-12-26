@@ -10,5 +10,6 @@ class HomeController < ApplicationController
     end
     @my_posts = Post.index(current_user)
     @target_posts = @my_posts.where(posted_at: @picked_date)
+    @others_posts = Post.where.not(user_id: current_user.id)
   end
 end
