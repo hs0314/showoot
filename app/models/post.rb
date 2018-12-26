@@ -43,4 +43,8 @@ class Post < ApplicationRecord
     return posts.where('user_id LIKE ? AND (title LIKE ? OR body LIKE ?)',user_id, term, term )
   end
 
+  def self.getallpostswithid(id)
+    posts = PostDm.getAllPosts
+    return posts.where(user_id:id)
+  end
 end

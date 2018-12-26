@@ -1,0 +1,15 @@
+<ul>
+  <% post = @target_posts %>
+    <li>
+      <a href="/diary/show_post/<%= post.id %>" class="item-link item-content">
+        <div class="item-inner">
+          <div class="item-title-row">
+            <div class="item-title"><%= post.title %></div>
+            <div class="item-after"></div>
+          </div>
+          <div class="item-subtitle"><%= post.posted_at %></div>
+          <div class="item-text"><%= post.body %></div>
+        </div>
+      </a>
+    </li>
+</ul>

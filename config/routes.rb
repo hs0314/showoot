@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   #search
   get 'diary/search' => 'search#result', as: 'diary_search'
 
+  #recommendation
+  get '/recommend/result' => 'recommend#result', as:'recommend_result'
 
   #my page
   get '/mypage/index' => 'mypage#index', as: 'index_mypage'
