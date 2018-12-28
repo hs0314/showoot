@@ -58,7 +58,6 @@ class DiaryController < ApplicationController
   end
 
   def update_post
-    byebug
     target = Post.where(posted_at: params[:post][:posted_at]).first
     #Post.update_post(target, params[:post])
     target.title = params[:post][:title]

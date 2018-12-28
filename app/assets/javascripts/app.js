@@ -81,6 +81,90 @@ $$(document).on("page:init", ".page[data-name='home-index']", function() {
 $$(document).on("page:init", ".page[data-name='diary-index_post']", function() {
   customizingCalendar();
 });
+$$(document).on("page:init", ".page[data-name='diary-edit_post']", function() {
+  var clothesInfo = [];
+  var clothInfo = {};
+  var selected_cloth;
+  var selected_color;
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+         $('#image_upload').attr('src', e.target.result);
+       };
+       reader.readAsDataURL(input.files[0]);
+     }
+   }
+   // Create dynamic Popover
+    var dynamicPopover = app.popover.create({
+      targetEl: 'a.dynamic-popover',
+      content: '<div class="popover" style="margin:0 auto;">'+
+                  '<div class="popover-inner">'+
+                    '<div class="block">'+
+                      '<p>색깔을 선택해주세요</p>'+
+                      '<p><a href="#" id="color" class="link popover-close">빨강</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">노랑</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">녹색</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">파랑</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">보라</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">주황</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">연두</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">청록</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">군청</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">자주</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">흰색</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">회색</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">검정</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">분홍</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">하늘</a></p>'+
+                      '<p><a href="#" id="color" class="link popover-close">브라운</a></p>'+
+                    '</div>'+
+                  '</div>'+
+                '</div>',
+      // Events
+      on: {
+        open: function (popover) {
+          console.log(popover);
+        },
+        opened: function (popover) {
+          //색깔 정해서 rails hidden_field에 value 넣기
+          var elements = document.getElementsByClassName('popover-close');
+          for (var i = 0, len = elements.length; i < len; i++) {
+            elements[i].addEventListener("click", function(e) {
+              console.log(e.target.innerText);
+              selected_color = e.target.innerText;
+            });
+          }
+          // $('#color').on('click', function(e){
+          //   console.log(e.target.innerText);
+          //   selected_color = e.target.innerText;
+          // });
+        },
+        closed: function(popover){
+          cloth_info = {main: selected_cloth.split("_")[0] ,sub: selected_cloth.split("_")[1], color: selected_color };
+          clothesInfo.push( cloth_info );
+        }
+      }
+    });
+
+   $('input').on('change', function(){
+     readURL(this);
+   });
+
+   $('#category_select_btn').on('click', function(){
+     //console.log(clothesInfo);
+     //여기서 hidden_field에 옷 정보 넘겨주기
+     document.getElementById('clothes_info').value = JSON.stringify(clothesInfo);
+     console.log(document.getElementById('clothes_info').value);
+   });
+
+   $$('input[type="radio"]').on('change click', function(ev){
+    selected_cloth = $$(ev.currentTarget).val();
+     console.log(selected_cloth);
+     dynamicPopover.open();
+   });
+});
 $$(document).on("page:init", ".page[data-name='diary-new_post']", function() {
   var clothesInfo = [];
   var clothInfo = {};
