@@ -102,14 +102,14 @@ class RecommendController < ApplicationController
           end
         end
       end
-
+      #byebug
       if cnt==0
         pearsoncorr[user]=0
       else
         t = sumxy - ((sumx*sumy)/cnt)
         dx = sumpowx - ((sumx**2)/cnt)
         dy = sumpowy - ((sumy**2)/cnt)
-
+        #byebug
         if Math.sqrt(dx*dy)==0 
           pearsoncorr[user]=0
         else
@@ -173,7 +173,7 @@ class RecommendController < ApplicationController
         cur = get_current_weather
         cmp = post.codi.weather
         daily.push([post.codi.preference,post.id])
-      elsif post.codi.event == "친구약속"
+      elsif post.codi.event == "친구"
         cur = get_current_weather
         cmp = post.codi.weather
         friend.push([post.codi.preference,post.id])
@@ -217,11 +217,11 @@ class RecommendController < ApplicationController
     userset = getalluser
     me = Set.new([current_user.id])
     myinfolist = fillcodiinfo(me)
-    if checkformin(myinfolist)==true
+    #if checkformin(myinfolist)==true
       #byebug
-      flash.now[:notice]=t('need more posts')
-      redirect_to(root_path)
-    end
+    #  flash.now[:notice]=t('need more posts')
+    #  redirect_to(root_path)
+    #end
 
     otherinfolist = fillcodiinfo(userset)
     total ={}
@@ -231,12 +231,9 @@ class RecommendController < ApplicationController
 
     topcorr = gettopcorr(total[current_user.id],current_user.id)
     
-    if topcorr.blank?
-      final = [1,2]
-    else 
-      final=getrecom(topcorr[0][1])
-    end
-
+    
+    final=getrecom(topcorr[0][1])
+    byebug
     @target_posts = Post.find(final)
     #@target_posts = Post.index(current_user)
     #test = @target_posts.first.codi
