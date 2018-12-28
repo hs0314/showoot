@@ -20,14 +20,14 @@ class RecommendController < ApplicationController
       posts.each do |post|
         #if post.created_at > time.4.months.ago
           if post.codi==nil
-            byebug
+
           end
           prefer = post.codi.preference
-        
+
           clothlist=[]
           post.codi.cloths.each do |cloth|
               clothlist.push(cloth.code)
-            
+
           end
           clothlist.sort
           if codiinfo.include?(clothlist)
@@ -45,18 +45,18 @@ class RecommendController < ApplicationController
         #end
       end
       likes = UserPost.find_by(user_id:user)
-      
+
       Array(likes).each do |like|
         post = PostDm.getPost(like.post_id)
         if post.codi==nil
             byebug
           end
           prefer = 4
-        
+
           clothlist=[]
           post.codi.cloths.each do |cloth|
               clothlist.push(cloth.code)
-            
+
           end
           clothlist.sort
           if codiinfo.include?(clothlist)
@@ -88,7 +88,7 @@ class RecommendController < ApplicationController
       cnt=0
 
       infos=others[user]
-      
+
       infos.each_key do |x|
         myinfolist.each_key do |y|
           if x==y
@@ -110,7 +110,7 @@ class RecommendController < ApplicationController
         dx = sumpowx - ((sumx**2)/cnt)
         dy = sumpowy - ((sumy**2)/cnt)
         #byebug
-        if Math.sqrt(dx*dy)==0 
+        if Math.sqrt(dx*dy)==0
           pearsoncorr[user]=0
         else
           pearsoncorr[user]=(t/Math.sqrt(dx*dy))
@@ -199,13 +199,13 @@ class RecommendController < ApplicationController
   def checkformin(myinfolist)
     cnt =0
     myinfolist.each_key do |x|
-      if myinfolist[x]["count"]==nil 
+      if myinfolist[x]["count"]==nil
 
-      else 
+      else
         cnt+=myinfolist[x]["count"]
       end
     end
-    if cnt>=50 
+    if cnt>=50
       return false
     else
       return true
@@ -213,7 +213,7 @@ class RecommendController < ApplicationController
   end
 
   def result
-    
+
     userset = getalluser
     me = Set.new([current_user.id])
     myinfolist = fillcodiinfo(me)
@@ -230,14 +230,13 @@ class RecommendController < ApplicationController
     end
 
     topcorr = gettopcorr(total[current_user.id],current_user.id)
-    
-    
+
+
     final=getrecom(topcorr[0][1])
     byebug
     @target_posts = Post.find(final)
     #@target_posts = Post.index(current_user)
     #test = @target_posts.first.codi
-    #byebug
     if @target_posts.blank?
       redirect_to(home_path)
     end

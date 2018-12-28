@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get '/diary/new_post' => 'diary#new_post', as: 'new_post'
   get '/diary/show_post/:id' => 'diary#show_post', as: 'show_post'
   post '/diary/create_post' => 'diary#create_post'
-  post '/diary/edit_post/:id' => 'diary#edit_post'
-  post '/diary/update_post/:id' => 'diary#update_post'
+  get '/diary/edit_post/:id' => 'diary#edit_post'
+  patch '/diary/update_post' => 'diary#update_post'
   delete '/diary/destroy_post/:id' => 'diary#destroy_post'
   get '/diary/pick_date' => 'diary#pick_date'
 

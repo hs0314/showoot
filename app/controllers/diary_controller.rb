@@ -1,5 +1,5 @@
 class DiaryController < ApplicationController
-  before_action :set_post, except: %i[pick_date index_post new_post create_post]
+  before_action :set_post, except: %i[pick_date index_post new_post create_post update_post]
 
   def index_post
     if params[:picked_date].present?
@@ -58,13 +58,20 @@ class DiaryController < ApplicationController
   end
 
   def update_post
-    Post.update_post(@post, params[:post])
-    redirect_to '/#!/diary/index_post'
+    byebug
+    target = Post.where(posted_at: params[:post][:posted_at]).first
+    #Post.update_post(target, params[:post])
+    target.title = params[:post][:title]
+    target.body = params[:post][:body]
+    target.image = params[:post][:image]
+    target.posted_at = params[:post][:posted_at]
+    target.save
+    redirect_to root_path
   end
 
   def destroy_post
     Post.destroy_post(@post)
-    redirect_to '/#!/diary/index_post'
+    redirect_to root_path
   end
 
   def pick_date
