@@ -44,6 +44,34 @@ class RecommendController < ApplicationController
           end
         #end
       end
+      likes = UserPost.find_by(user_id:user)
+      
+      Array(likes).each do |like|
+        post = PostDm.getPost(like.post_id)
+        if post.codi==nil
+            byebug
+          end
+          prefer = 4
+        
+          clothlist=[]
+          post.codi.cloths.each do |cloth|
+              clothlist.push(cloth.code)
+            
+          end
+          clothlist.sort
+          if codiinfo.include?(clothlist)
+            cnt =codiinfo[clothlist]["count"]+1
+            codiinfo[clothlist]["count"]=cnt
+            codiinfo[clothlist]["preference"]+=prefer
+            codiinfo[clothlist]["avg"] = codiinfo[clothlist]["preference"]/cnt
+          else
+            tmphash={}
+            tmphash["count"]=1
+            tmphash["preference"] = prefer
+            tmphash["avg"] = prefer
+            codiinfo[clothlist]=tmphash
+          end
+      end
       tmp[user]=codiinfo
     end
     return tmp
@@ -168,13 +196,33 @@ class RecommendController < ApplicationController
     return result
   end
 
+  def checkformin(myinfolist)
+    cnt =0
+    myinfolist.each_key do |x|
+      if myinfolist[x]["count"]==nil 
 
+      else 
+        cnt+=myinfolist[x]["count"]
+      end
+    end
+    if cnt>=50 
+      return false
+    else
+      return true
+    end
+  end
 
   def result
-    byebug
+    
     userset = getalluser
     me = Set.new([current_user.id])
     myinfolist = fillcodiinfo(me)
+    if checkformin(myinfolist)==true
+      #byebug
+      flash.now[:notice]=t('need more posts')
+      redirect_to(root_path)
+    end
+
     otherinfolist = fillcodiinfo(userset)
     total ={}
     userset.each do |user|
@@ -182,10 +230,14 @@ class RecommendController < ApplicationController
     end
 
     topcorr = gettopcorr(total[current_user.id],current_user.id)
-    final=getrecom(topcorr[0][1])
+    
+    if topcorr.blank?
+      final = [1,2]
+    else 
+      final=getrecom(topcorr[0][1])
+    end
 
-
-    @target_posts = Post.find_all_by_id(final)
+    @target_posts = Post.find(final)
     #@target_posts = Post.index(current_user)
     #test = @target_posts.first.codi
     #byebug
